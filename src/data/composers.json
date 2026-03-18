@@ -1,0 +1,114 @@
+[
+  {
+    "id": 1,
+    "name": [
+      {
+        "lang": "de",
+        "last": "Mozart",
+        "given": "Wolfgang Amadeus"
+      },
+      {
+        "lang": "ja",
+        "last": "モーツァルト",
+        "given": "ヴォルフガング・アマデウス"
+      }
+    ],
+    "birth": { "year": 1756, "month": 1, "day": 27 },
+    "death": { "year": 1791, "month": 12, "day": 5 }
+  },
+  {
+    "id": 2,
+    "name": [
+      {
+        "lang": "de",
+        "last": "Bach",
+        "given": "Johann Sebastian"
+      },
+      {
+        "lang": "ja",
+        "last": "バッハ",
+        "given": "ヨハン・ゼバスティアン"
+      }
+    ],
+    "birth": { "year": 1685, "month": 3, "day": 21 },
+    "death": { "year": 1750, "month": 7, "day": 28 }
+  },
+  {
+    "id": 3,
+    "name": [
+      {
+        "lang": "de",
+        "last": "Beethoven",
+        "given": "Ludwig van"
+      },
+      {
+        "lang": "ja",
+        "last": "ベートーヴェン",
+        "given": "ルートヴィヒ・ヴァン"
+      }
+    ],
+    "birth": { "year": 1770, "month": 12, "day": 16 },
+    "death": { "year": 1827, "month": 3, "day": 26 }
+  },
+  {
+    "id": 4,
+    "name": [
+      {
+        "lang": "en",
+        "last": "Tchaikovsky",
+        "given": "Pyotr Ilyich"
+      },
+      {
+        "lang": "ru",
+        "last": "Чайковский",
+        "given": "Пётр Ильич"
+      },
+      {
+        "lang": "ja",
+        "last": "チャイコフスキー",
+        "given": "ピョートル・イリイチ"
+      }
+    ],
+    "birth": { "year": 1840, "month": 5, "day": 7 },
+    "death": { "year": 1893, "month": 11, "day": 6 }
+  },
+  {
+    "id": 5,
+    "name": [
+      {
+        "lang": "de",
+        "last": "Hindemith",
+        "given": "Paul"
+      },
+      {
+        "lang": "ja",
+        "last": "ヒンデミット",
+        "given": "パウル"
+      }
+    ],
+    "birth": { "year": 1895, "month": 11, "day": 16 },
+    "death": { "year": 1963, "month": 12, "day": 28 }
+  },
+  {
+    "id": 6,
+    "name": [
+      {
+        "lang": "en",
+        "last": "Stravinsky",
+        "given": "Igor Fyodorovich"
+      },
+      {
+        "lang": "ru",
+        "last": "Стравинский",
+        "given": "Игорь Фёдорович"
+      },
+      {
+        "lang": "ja",
+        "last": "ストラヴィンスキー",
+        "given": "イゴール・フョードロヴィチ"
+      }
+    ],
+    "birth": { "year": 1882, "month": 6, "day": 17 },
+    "death": { "year": 1971, "month": 4, "day": 6 }
+  }
+]
