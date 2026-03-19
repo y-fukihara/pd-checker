@@ -1,3 +1,139 @@
+:root{
+  --max-content-width: min(95vw, 1200px);
+  --base-font-size: 16px;
+
+  --heading-font: 'Meiryo', "SF Pro Display", "Ubuntu", "Helvetica Neue", "Noto Sans JP", sans-serif;
+  --heading: var(--heading-font);
+
+  --ul-border-color: gray;
+}
+
+body {
+  font-size: var(--base-font-size, 16px);
+}
+
 h1 {
   margin: 1em auto;
+}
+
+div#app > div {
+  container-type: inline-size;
+  margin: 1em calc((100vw - var(--max-content-width), 95vw) / 2);
+  padding: 5%;
+}
+
+/* フォーム */
+form {
+  label {
+    margin-right: .6em;
+  }
+}
+
+/* 個別のパーツ */
+div#result {
+  text-align: center;
+
+  span#show-query {
+    display: inline-block;
+    width: 40ch;
+    height: 1lh;
+
+    border-bottom: 1px solid var(--ul-border-color, gray);
+    margin-left: .6em;
+    padding: 0 .2em .05em;
+    vertical-align: baseline;
+
+    text-align: left;
+  }
+
+  #result-list {
+    --item-border-radius: 8px;
+    width: 100%;
+    min-height: 5em;
+    margin: 1em auto;
+    padding: 0em 1em;
+
+    transition: height .4s ease;
+  }
+}
+.result-item {
+  border: 1px solid var(--ul-border-color, gray);
+  border-radius: var(--item-border-radius, 8px);
+
+  margin: .5em 1em;
+  padding: 0 max(1em, var(--item-border-radius, 8px));
+
+  .result-heading {
+    margin: .6em 0 .4em;
+    text-align: left;
+    font-weight: bolder;
+    font-family: var(--heading-font);
+    font-size: 106%;
+    color: var(--text-h, black);
+
+    span.familyname {
+      font-variant-caps: small-caps;
+      font-size: 135%;
+    }
+  }
+  .result-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
+
+    .lifetime {
+      grid-area: "lifetime";
+      display: grid;
+      grid-template-areas: "birth death";
+      grid-template-columns: 1fr 1fr;
+      gap: 1em;
+
+      font-size: 90%;
+      .birth, .death {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: .3em;
+
+        padding: .3em 0 .5em;
+
+        line-height: 1;
+      }
+
+      .label {
+        font-weight: bold;
+        color: var(--text-h, black);
+      }
+    }
+  }
+}
+
+div#composers-list {
+  text-align: left;
+
+  table{
+    border-collapse: collapse;
+
+    col.composer-id {
+      text-align: right;
+    }
+    col.composer-birth {
+      text-align: center;
+      width: 11ch;
+    }
+    col.composer-death {
+      text-align: center;
+      width: 11ch;
+    }
+    thead tr:last-child th {
+      padding-bottom: .3em;
+      border-bottom: 3px solid black;
+    }
+    th, td {
+      padding: 0 .5em;
+    }
+    th {
+      text-align: center;
+    }
+  }
 }
