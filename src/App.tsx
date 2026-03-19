@@ -35,7 +35,10 @@ function App() {
         <p>検索クエリ: <span id="show-query">{query_name}</span></p>
         <div id="result-list">
           {sampleList
-            .filter((person) => person.name.some((n) => `${n.given} ${n.last}`.toLowerCase().includes(query_name.toLowerCase())))
+            .filter((person) => {
+              if (query_name.trim() === '') return false;
+              else return person.name.some((n) => `${n.given} ${n.last}`.toLowerCase().includes(query_name.toLowerCase()));
+            })
             .map((person) => (
               <div key={`result-${person.name[0].last}`} className="result-item">
                 <div className="result-heading">
