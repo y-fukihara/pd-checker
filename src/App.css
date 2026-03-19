@@ -57,6 +57,9 @@ div#result {
   }
 }
 .result-item {
+  display: block list-item;
+  list-style: decimal outside;
+
   border: 1px solid var(--ul-border-color, gray);
   border-radius: var(--item-border-radius, 8px);
 
