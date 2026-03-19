@@ -117,23 +117,21 @@ div#composers-list {
   table{
     border-collapse: collapse;
 
-    col.composer-id {
-      text-align: right;
-    }
-    col.composer-birth {
-      text-align: center;
-      width: 11ch;
-    }
-    col.composer-death {
-      text-align: center;
-      width: 11ch;
-    }
     thead tr:last-child th {
       padding-bottom: .3em;
       border-bottom: 3px solid black;
     }
     th, td {
       padding: 0 .5em;
+    }
+    :is(th, td):nth-child(1) {
+      text-align: right;
+    }
+    :is(th, td):nth-child(3) {
+      text-align: center;
+    }
+    :is(th, td):nth-child(4) {
+      text-align: center;
     }
     th {
       text-align: center;
