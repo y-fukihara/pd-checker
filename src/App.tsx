@@ -20,7 +20,7 @@ function App() {
     death: PDate
   }
 
-  const sampleList = Composers as Person[]
+  const composersList = Composers as Person[]
 
   const [query_name, setQueryByName] = useState<string>('');
 
@@ -34,7 +34,7 @@ function App() {
         <h2>検索結果</h2>
         <p>検索クエリ: <span id="show-query">{query_name}</span></p>
         <div id="result-list">
-          {sampleList
+          {composersList
             .filter((person) => {
               if (query_name.trim() === '') return false;
               else return person.name.some((n) => `${n.given} ${n.last}`.toLowerCase().includes(query_name.toLowerCase()));
@@ -80,7 +80,7 @@ function App() {
               </tr>
             </thead>
             <tbody>
-              {sampleList.map((person) => (
+              {composersList.map((person) => (
                 <tr key={`list-${person.name[0].last}`}>
                   <td>{person.id}</td>
                   <td>
