@@ -13,14 +13,31 @@ function App() {
     month: number
     day: number
   }
-  type Person = {
+  /*
+  type RegDate = {
+    locate: string
+    year: number
+    month: number
+    day: number
+  }
+  */
+  type ComposersJSON = {
     id: number,
     name: PName[]
     birth: PDate
     death: PDate
   }
+  /*
+  type ComposerResult = {
+    id: number
+    name: PName
+    birth: PDate
+    death: PDate
+    expiration: RegDate
+  }
+  */
 
-  const composersList = Composers as Person[]
+  const composersList = Composers as ComposersJSON[]
 
   const [query_name, setQueryByName] = useState<string>('');
 
