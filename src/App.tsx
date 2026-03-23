@@ -62,39 +62,41 @@ function App() {
         </div>
       </div>
       <div id="composers-list">
-        <h2>Composers List</h2>
-        <table>
-          <colgroup>
-            <col className="composer-id" />
-            <col className="composer-name" />
-            <col className="composer-birth" />
-            <col className="composer-death" />
-          </colgroup>
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Name</th>
-              <th>Birth</th>
-              <th>Death</th>
-            </tr>
-          </thead>
-          <tbody>
-            {sampleList.map((person) => (
-              <tr key={`list-${person.name[0].last}`}>
-                <td>{person.id}</td>
-                <td>
-                  {person.name[0].last}, {person.name[0].given}
-                </td>
-                <td>
-                  {person.birth.year}-{person.birth.month.toString().padStart(2, '0')}-{person.birth.day.toString().padStart(2, '0')}
-                </td>
-                <td>
-                  {person.death.year}-{person.death.month.toString().padStart(2, '0')}-{person.death.day.toString().padStart(2, '0')}
-                </td>
+        <div className="wrapper">
+          <h2>Composers List</h2>
+          <table>
+            <colgroup>
+              <col className="composer-id" />
+              <col className="composer-name" />
+              <col className="composer-birth" />
+              <col className="composer-death" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Birth</th>
+                <th>Death</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {sampleList.map((person) => (
+                <tr key={`list-${person.name[0].last}`}>
+                  <td>{person.id}</td>
+                  <td>
+                    {person.name[0].last}, {person.name[0].given}
+                  </td>
+                  <td>
+                    {person.birth.year}-{person.birth.month.toString().padStart(2, '0')}-{person.birth.day.toString().padStart(2, '0')}
+                  </td>
+                  <td>
+                    {person.death.year}-{person.death.month.toString().padStart(2, '0')}-{person.death.day.toString().padStart(2, '0')}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   )
