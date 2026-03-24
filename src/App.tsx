@@ -13,14 +13,6 @@ function App() {
     month: number
     day: number
   }
-  /*
-  type RegDate = {
-    locate: string
-    year: number
-    month: number
-    day: number
-  }
-  */
   type ComposersJSON = {
     id: number,
     name: PName[]
@@ -33,7 +25,7 @@ function App() {
     name: PName
     birth: PDate
     death: PDate
-    expiration: RegDate
+    expiration: PDate
   }
   */
 
