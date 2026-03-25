@@ -56,7 +56,7 @@ function App() {
               else return person.name.some((n) => `${n.given} ${n.last}`.toLowerCase().includes(query_name.toLowerCase()));
             })
             .map((person) => (
-              <div key={`result-${person.name[0].last}`} className="result-item">
+              <div key={`result-${person.id}`} className="result-item">
                 <div className="result-heading">
                   <span className="familyname">{person.name[0].last},</span> {person.name[0].given}
                 </div>
@@ -97,7 +97,7 @@ function App() {
             </thead>
             <tbody>
               {composersList.map((person) => (
-                <tr key={`list-${person.name[0].last}`}>
+                <tr key={`list-${person.id}`}>
                   <td>{person.id}</td>
                   <td>
                     {person.name[0].last}, {person.name[0].given}
