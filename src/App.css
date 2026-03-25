@@ -1,43 +1,7 @@
-:root{
-  --max-content-width: min(95vw, 1200px);
-  --base-font-size: 16px;
-
-  --heading-font: 'Meiryo', "SF Pro Display", "Ubuntu", "Helvetica Neue", "Noto Sans JP", sans-serif;
-  --heading: var(--heading-font);
-
-  --ul-border-color: gray;
-}
-
-hgroup h1:has(+ p) {
-  margin-bottom: .5em;
-}
-
-body {
-  font-size: var(--base-font-size, 16px);
-}
-p, li { margin: 1em auto; }
-
-div#disclaimer {
-  border: 3px solid var(--ul-border-color, gray);
-  border-radius: 1em;
-  margin: 1em 1em;
-  padding: 1em 2em 0;
-
-  p {
-    text-align: left;
-  }
-}
 div#app > div {
   container-type: inline-size;
   margin: 1em calc((100vw - var(--max-content-width), 95vw) / 2);
   padding: 5%;
-}
-
-/* フォーム */
-form {
-  label {
-    margin-right: .6em;
-  }
 }
 
 /* 個別のパーツ */

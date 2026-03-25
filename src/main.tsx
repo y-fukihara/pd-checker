@@ -6,6 +6,7 @@ import 'sanitize.css/assets.css'
 import 'sanitize.css/typography.css'
 import 'sanitize.css/system-ui.css'
 import './index.css'
+import './main.css'
 import App from './App.tsx'
 
 createRoot(document.getElementById('root')!).render(
