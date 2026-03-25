@@ -91,7 +91,7 @@ function App() {
     <div id="app">
       <form id="form-name" name="search-by-name" accessKey="q">
         <fieldset id="field-region">
-          <legend>適用地域</legend>
+          <legend>適用ルール</legend>
           <label htmlFor="region-50yrs">50年:</label>
           <input type="radio" name="region" id="region-50yrs" onChange={() => setConfigRegion("50yrs")} />
           <label htmlFor="region-75yrs">75年:</label>
@@ -117,16 +117,16 @@ function App() {
                     <span className="result-summary-placeholder">(PLACEHOLDER)</span>
                   </div>
                   <div className="expiration">
-                    <div className="label">Expiration</div>
+                    <div className="label">保護期間終了日</div>
                     <div className="date">{person.expiration.year}-{person.expiration.month.toString().padStart(2,'0')}-{person.expiration.day.toString().padStart(2,'0')}</div>
                   </div>
                   <div className="lifetime">
                     <div className="birth">
-                      <div className="label">Birth</div>
+                      <div className="label">出生日</div>
                       <div className="date">{person.birth.year}-{person.birth.month.toString().padStart(2, '0')}-{person.birth.day.toString().padStart(2, '0')}</div>
                     </div>
                     <div className="death">
-                      <div className="label">Death</div>
+                      <div className="label">死亡日</div>
                       <div className="date">{person.death.year}-{person.death.month.toString().padStart(2, '0')}-{person.death.day.toString().padStart(2, '0')}</div>
                     </div>
                   </div>

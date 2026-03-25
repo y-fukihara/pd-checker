@@ -16,7 +16,7 @@ div#result {
     width: 40ch;
     height: 1lh;
 
-    border-bottom: 1px solid var(--ul-border-color, gray);
+    border-bottom: 1px dashed var(--ul-border-color, gray);
     margin-left: .6em;
     padding: 0 .2em .05em;
     vertical-align: baseline;
@@ -45,7 +45,7 @@ div#result {
   padding: 0 max(1em, var(--item-border-radius, 8px));
 
   .result-heading {
-    margin: .6em 0 .4em;
+    margin: .6em 0 .8em;
     text-align: left;
     font-weight: bolder;
     font-family: var(--heading-font);
@@ -64,6 +64,7 @@ div#result {
       "expiration lifetime";
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+    align-items: center;
 
     .summary {
       grid-area: summary;
@@ -95,6 +96,15 @@ div#result {
     .label {
       font-weight: bold;
       color: var(--text-h, black);
+    }
+  }
+}
+@media not (max-width: 40rem) {
+  .result-item .result-details .expiration {
+    div { display: inline-block; }
+    .label::after {
+      content: ":";
+      margin-right: 1ch;
     }
   }
 }
