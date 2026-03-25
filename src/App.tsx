@@ -36,6 +36,13 @@ function App() {
   return (
     <div id="app">
       <form id="form-name" name="search-by-name" accessKey="q">
+        <fieldset id="field-region">
+          <legend>適用地域</legend>
+          <label htmlFor="region-75yrs">75年</label>
+          <input type="radio" name="region" value="75yrs" id="region-75yrs" />
+          <label htmlFor="region-jpn">日本 (未実装)</label>
+          <input type="radio" disabled name="region" value="jpn" id="region-jpn" />
+        </fieldset>
         <label htmlFor="name">作曲家の名前:</label>
         <input type="text" id="name" name="name" onChange={(e) => setQueryByName(e.target.value)}></input>
       </form>
