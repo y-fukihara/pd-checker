@@ -5,6 +5,11 @@ import Composers from './data/composers.json'
 
 function App() {
   type Region = "50yrs" | "75yrs" | "jpn"
+/*
+  type Configuration = {
+    region: Region
+  }
+*/
   type PName = {
     lang: string
     last: string
@@ -55,12 +60,21 @@ function App() {
     }
     return result;
   }
-  const updateResult = (q: string) => {
-    const result: [string, ComposerResult[]]
-      = [q, composersList
+
+  const [query_name, setQueryName] = useState<string>('')
+  const [config_region, setConfigRegion] = useState<Region>("75yrs")
+
+/*
+  const config: Configuration = {
+    region: config_region
+  }
+*/
+  const composersList = Composers as ComposersJSON[]
+  const composersResultList: ComposerResult[]
+    = composersList
         .filter((person) => {
-          if (q.trim() === '') return false;
-          else return person.name.some((n) => `${n.given} ${n.last}`.toLowerCase().includes(q.toLowerCase()));
+          if (query_name.trim() === '') return false;
+          else return person.name.some((n) => `${n.given} ${n.last}`.toLowerCase().includes(query_name.toLowerCase()));
         })
         .map((person) => {
           const ret: ComposerResult = {
@@ -68,38 +82,31 @@ function App() {
             name: person.name,
             birth: person.birth,
             death: person.death,
-            expiration: calcExpiration("75yrs", person.death)
+            expiration: calcExpiration(config_region, person.death)
           };
           return ret;
-        })];
-
-    return result;
-  }
-
-  const composersList = Composers as ComposersJSON[]
-
-  const [composers_result, setComposersResult] = useState<[string, ComposerResult[]]>(['',[]])
+        });
 
   return (
     <div id="app">
       <form id="form-name" name="search-by-name" accessKey="q">
         <fieldset id="field-region">
           <legend>適用地域</legend>
-          <label htmlFor="region-50yrs">50年</label>
-          <input type="radio" disabled name="region-50yrs" id="region-50yrs" />
-          <label htmlFor="region-75yrs">75年</label>
-          <input type="radio" checked name="region" value="75yrs" id="region-75yrs" />
-          <label htmlFor="region-jpn">日本 (未実装)</label>
+          <label htmlFor="region-50yrs">50年:</label>
+          <input type="radio" name="region" id="region-50yrs" onChange={() => setConfigRegion("50yrs")} />
+          <label htmlFor="region-75yrs">75年:</label>
+          <input type="radio" defaultChecked name="region" value="75yrs" id="region-75yrs" onChange={() => setConfigRegion("75yrs")} />
+          <label htmlFor="region-jpn">日本 (未実装):</label>
           <input type="radio" disabled name="region" value="jpn" id="region-jpn" />
         </fieldset>
         <label htmlFor="name">作曲家の名前:</label>
-        <input type="text" id="name" name="name" onChange={(e) => {setComposersResult(updateResult(e.target.value));}}></input>
+        <input type="text" id="name" name="name" onChange={(e) => {setQueryName(e.target.value)}}></input>
       </form>
       <div id="result">
         <h2>検索結果</h2>
-        <p>検索クエリ: <span id="show-query">{composers_result[0]}</span></p>
+        <p>検索クエリ: <span id="show-query">{query_name}</span></p>
         <div id="result-list">
-          {composers_result[1]
+          {composersResultList
             .map((person) => (
               <div key={`result-${person.id}`} className="result-item">
                 <div className="result-heading">
@@ -110,7 +117,8 @@ function App() {
                     <span className="result-summary-placeholder">(PLACEHOLDER)</span>
                   </div>
                   <div className="expiration">
-                    <strong>Expiration:</strong> {person.expiration.year}-{person.expiration.month.toString().padStart(2,'0')}-{person.expiration.day.toString().padStart(2,'0')}
+                    <div className="label">Expiration</div>
+                    <div className="date">{person.expiration.year}-{person.expiration.month.toString().padStart(2,'0')}-{person.expiration.day.toString().padStart(2,'0')}</div>
                   </div>
                   <div className="lifetime">
                     <div className="birth">

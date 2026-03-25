@@ -91,14 +91,39 @@ div#result {
 
         line-height: 1;
       }
-
-      .label {
-        font-weight: bold;
-        color: var(--text-h, black);
-      }
+    }
+    .label {
+      font-weight: bold;
+      color: var(--text-h, black);
     }
   }
 }
+@media (max-width: 40rem) {
+  .result-item .result-details {
+    .lifetime {
+      grid-template-areas:
+        "birth"
+        "death";
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 0;
+
+      padding: .3em 0;
+    }
+
+    .expiration {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: .3em;
+
+        padding: .3em 0 .5em;
+
+        line-height: 1;
+    }
+  }
+}
+
 [class*="result-summary-"] {
   display: inline-block;
   padding: .0625em .375em .125em;
