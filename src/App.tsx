@@ -1,8 +1,10 @@
 import { useState } from 'react'
+import { DateTime } from 'luxon'
 import './App.css'
 import Composers from './data/composers.json'
 
 function App() {
+  type Region = "50yrs" | "75yrs" | "jpn"
   type PName = {
     lang: string
     last: string
@@ -19,48 +21,97 @@ function App() {
     birth: PDate
     death: PDate
   }
-  /*
   type ComposerResult = {
     id: number
-    name: PName
+    name: PName[]
     birth: PDate
     death: PDate
     expiration: PDate
   }
-  */
+
+  const calcExpiration = (reg: Region, d: PDate) => {
+    const dd: DateTime = DateTime.fromObject(d);
+    let expd: DateTime | null = null;
+    switch(reg) {
+      case "50yrs":
+        expd = dd.plus({ years: 50 });
+        break;
+      case "75yrs":
+        expd = dd.plus({ years: 75 });
+        break;
+      case "jpn":
+        // Not implemented
+        break;
+      default:
+        break;
+    }
+    if (expd == null) {
+      throw "Invalid argument";
+    }
+    const result: PDate = {
+      year: expd.year,
+      month: expd.month,
+      day: expd.day
+    }
+    return result;
+  }
+  const updateResult = (q: string) => {
+    const result: [string, ComposerResult[]]
+      = [q, composersList
+        .filter((person) => {
+          if (q.trim() === '') return false;
+          else return person.name.some((n) => `${n.given} ${n.last}`.toLowerCase().includes(q.toLowerCase()));
+        })
+        .map((person) => {
+          const ret: ComposerResult = {
+            id: person.id,
+            name: person.name,
+            birth: person.birth,
+            death: person.death,
+            expiration: calcExpiration("75yrs", person.death)
+          };
+          return ret;
+        })];
+
+    return result;
+  }
 
   const composersList = Composers as ComposersJSON[]
 
-  const [query_name, setQueryByName] = useState<string>('');
+  const [composers_result, setComposersResult] = useState<[string, ComposerResult[]]>(['',[]])
 
   return (
     <div id="app">
       <form id="form-name" name="search-by-name" accessKey="q">
         <fieldset id="field-region">
           <legend>適用地域</legend>
+          <label htmlFor="region-50yrs">50年</label>
+          <input type="radio" disabled name="region-50yrs" id="region-50yrs" />
           <label htmlFor="region-75yrs">75年</label>
-          <input type="radio" name="region" value="75yrs" id="region-75yrs" />
+          <input type="radio" checked name="region" value="75yrs" id="region-75yrs" />
           <label htmlFor="region-jpn">日本 (未実装)</label>
           <input type="radio" disabled name="region" value="jpn" id="region-jpn" />
         </fieldset>
         <label htmlFor="name">作曲家の名前:</label>
-        <input type="text" id="name" name="name" onChange={(e) => setQueryByName(e.target.value)}></input>
+        <input type="text" id="name" name="name" onChange={(e) => {setComposersResult(updateResult(e.target.value));}}></input>
       </form>
       <div id="result">
         <h2>検索結果</h2>
-        <p>検索クエリ: <span id="show-query">{query_name}</span></p>
+        <p>検索クエリ: <span id="show-query">{composers_result[0]}</span></p>
         <div id="result-list">
-          {composersList
-            .filter((person) => {
-              if (query_name.trim() === '') return false;
-              else return person.name.some((n) => `${n.given} ${n.last}`.toLowerCase().includes(query_name.toLowerCase()));
-            })
+          {composers_result[1]
             .map((person) => (
               <div key={`result-${person.id}`} className="result-item">
                 <div className="result-heading">
                   <span className="familyname">{person.name[0].last},</span> {person.name[0].given}
                 </div>
                 <div className="result-details">
+                  <div className="summary">
+                    <span className="result-summary-placeholder">(PLACEHOLDER)</span>
+                  </div>
+                  <div className="expiration">
+                    <strong>Expiration:</strong> {person.expiration.year}-{person.expiration.month.toString().padStart(2,'0')}-{person.expiration.day.toString().padStart(2,'0')}
+                  </div>
                   <div className="lifetime">
                     <div className="birth">
                       <div className="label">Birth</div>

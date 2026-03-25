@@ -1,7 +1,7 @@
 {
   "name": "pd-checker",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,12 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "luxon": "^3.7.2",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "sanitize.css": "^13.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.4",
+    "@types/luxon": "^3.7.1",
     "@types/node": "^24.12.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",

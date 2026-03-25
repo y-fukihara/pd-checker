@@ -1,10 +1,13 @@
+:root {
+  --ui-border-color: gray;
+}
+
 div#app > div {
   container-type: inline-size;
   margin: 1em calc((100vw - var(--max-content-width), 95vw) / 2);
   padding: 5%;
 }
 
-/* 個別のパーツ */
 div#result {
   text-align: center;
 
@@ -55,12 +58,23 @@ div#result {
     }
   }
   .result-details {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: end;
+    display: grid;
+    grid-template-areas:
+      "summary lifetime"
+      "expiration lifetime";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
 
+    .summary {
+      grid-area: summary;
+    }
+    .expiration {
+      grid-area: expiration;
+
+      strong { color: var(--text-h, black); }
+    }
     .lifetime {
-      grid-area: "lifetime";
+      grid-area: lifetime;
       display: grid;
       grid-template-areas: "birth death";
       grid-template-columns: 1fr 1fr;
@@ -84,6 +98,16 @@ div#result {
       }
     }
   }
+}
+[class*="result-summary-"] {
+  display: inline-block;
+  padding: .0625em .375em .125em;
+  border-radius: .375rem;
+}
+.result-summary-placeholder {
+  background: #808080;
+  color: white;
+  font-weight: 700;
 }
 
 div#composers-list {
