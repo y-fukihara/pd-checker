@@ -39,10 +39,10 @@ function App() {
     let expd: DateTime | null = null;
     switch(reg) {
       case "50yrs":
-        expd = dd.plus({ years: 50 });
+        expd = dd.plus({ years: 50 }).set({ month: 12, day: 31 });
         break;
       case "75yrs":
-        expd = dd.plus({ years: 75 });
+        expd = dd.plus({ years: 75 }).set({ month: 12, day: 31 });
         break;
       case "jpn":
         // Not implemented
