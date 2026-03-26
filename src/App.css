@@ -8,6 +8,18 @@ div#app > div {
   padding: 5%;
 }
 
+fieldset#field-region {
+  label {
+    margin-right: .6ch;
+  }
+  input[type="radio"] {
+    vertical-align: -1px;
+  }
+  input:has(+ label) {
+    margin-right: 2em;
+  }
+}
+
 div#result {
   text-align: center;
 

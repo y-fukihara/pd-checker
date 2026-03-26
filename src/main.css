@@ -49,9 +49,5 @@ form {
     margin: 1em auto 1.2em;
     padding-block-end: 0.375em;
   }
-
-  input:has(+ label) {
-    margin-right: 1.2em;
-  }
 }
 
