@@ -1,5 +1,12 @@
 import { useState } from 'react'
 import { DateTime } from 'luxon'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { far } from '@fortawesome/free-regular-svg-icons'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+library.add(fas, far, fab)
+
 import './App.css'
 import Composers from './data/composers.json'
 
@@ -92,12 +99,21 @@ function App() {
       <form id="form-name" name="search-by-name" accessKey="q">
         <fieldset id="field-region">
           <legend>適用ルール</legend>
-          <label htmlFor="region-50yrs">50年:</label>
-          <input type="radio" name="region" id="region-50yrs" onChange={() => setConfigRegion("50yrs")} />
-          <label htmlFor="region-75yrs">75年:</label>
-          <input type="radio" defaultChecked name="region" value="75yrs" id="region-75yrs" onChange={() => setConfigRegion("75yrs")} />
-          <label htmlFor="region-jpn">日本 (未実装):</label>
-          <input type="radio" disabled name="region" value="jpn" id="region-jpn" />
+          <div className="field-item">
+            <label htmlFor="region-50yrs">50年:</label>
+            <input type="radio" name="region" id="region-50yrs" onChange={() => setConfigRegion("50yrs")} />
+            <FontAwesomeIcon icon={["far", "circle-question"]} />
+          </div>
+          <div className="field-item">
+            <label htmlFor="region-75yrs">75年:</label>
+            <input type="radio" defaultChecked name="region" value="75yrs" id="region-75yrs" onChange={() => setConfigRegion("75yrs")} />
+            <FontAwesomeIcon icon={["far", "circle-question"]} />
+          </div>
+          <div className="field-item">
+            <label htmlFor="region-jpn">日本 (未実装):</label>
+            <input type="radio" disabled name="region" value="jpn" id="region-jpn" />
+            <FontAwesomeIcon icon={["far", "circle-question"]} />
+          </div>
         </fieldset>
         <label htmlFor="name">作曲家の名前:</label>
         <input type="text" id="name" name="name" onChange={(e) => {setQueryName(e.target.value)}}></input>

@@ -9,14 +9,33 @@ div#app > div {
 }
 
 fieldset#field-region {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1.2em;
+
+  padding-inline: 1.25em;
+
   label {
     margin-right: .6ch;
   }
+
   input[type="radio"] {
     vertical-align: -1px;
   }
-  input:has(+ label) {
-    margin-right: 2em;
+  input[type="radio"] + svg {
+    margin-inline: .125em;
+    vertical-align: -9%;
+    scale: 0.9;
+
+    opacity: 0.3;
+    &:hover {
+      cursor: not-allowed;
+    }
+  }
+}
+@media only screen and (max-width: 40rem) {
+  fieldset#field-region {
+    gap: 1em;
   }
 }
 
