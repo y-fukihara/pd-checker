@@ -1,10 +1,12 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+/* Sanitization CSS */
 import 'sanitize.css'
 import 'sanitize.css/forms.css'
 import 'sanitize.css/assets.css'
 import 'sanitize.css/typography.css'
 import 'sanitize.css/system-ui.css'
+/* Workspace and component CSS */
 import './index.css'
 import './main.css'
 import App from './App.tsx'
