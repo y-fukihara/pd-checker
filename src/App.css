@@ -1,6 +1,4 @@
-:root {
-  --ui-border-color: gray;
-}
+@import url('./global.css');
 
 div#app > div {
   container-type: inline-size;
@@ -97,6 +95,8 @@ div#result {
     grid-template-rows: 1fr 1fr;
     align-items: center;
 
+    margin: .5em 0 .5em;
+
     .summary {
       grid-area: summary;
     }
@@ -141,15 +141,22 @@ div#result {
 }
 @media (max-width: 40rem) {
   .result-item .result-details {
+    grid-template-columns: 1.4fr 1fr;
+
     .lifetime {
       grid-template-areas:
         "birth"
         "death";
       grid-template-columns: 1fr;
-      grid-template-rows: 1fr 1fr;
+      grid-template-rows: subgrid;
       gap: 0;
 
-      padding: .3em 0;
+      padding: 0 0;
+      align-items: center;
+
+      .birth, .death {
+        padding: 0;
+      }
     }
 
     .expiration {
@@ -169,11 +176,19 @@ div#result {
   display: inline-block;
   padding: .0625em .375em .125em;
   border-radius: .375rem;
+  font-weight: 700;
 }
 .result-summary-placeholder {
   background: #808080;
   color: white;
-  font-weight: 700;
+}
+.result-summary-pd {
+  background: hsl(123, 100%, 35%);
+  color: white;
+}
+.result-summary-non-pd {
+  background: hsl(0, 100%, 35%);
+  color: white;
 }
 
 div#composers-list {

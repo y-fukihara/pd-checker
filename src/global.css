@@ -1,0 +1,9 @@
+:root{
+  --max-content-width: min(95vw, 1200px);
+  --base-font-size: 16px;
+
+  --heading-font: 'Meiryo', "SF Pro Display", "Ubuntu", "Helvetica Neue", "Noto Sans JP", sans-serif;
+  --heading: var(--heading-font);
+
+  --ul-border-color: gray;
+}
