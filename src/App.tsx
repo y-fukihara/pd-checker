@@ -11,12 +11,14 @@ import './App.css'
 import Composers from './data/composers.json'
 
 function App() {
+  /* Configuration Data Types */
   type Region = "50yrs" | "75yrs" | "jpn"
 /*
   type Configuration = {
     region: Region
   }
 */
+  /* Person Data Types */
   type PName = {
     lang: string
     last: string
@@ -33,23 +35,30 @@ function App() {
     birth: PDate
     death: PDate
   }
+  /* Result Data Types */
+  type SummaryExpiration
+    = "placeholder"
+    | "pd"
+    | "non-pd"
   type ComposerResult = {
     id: number
     name: PName[]
     birth: PDate
     death: PDate
     expiration: PDate
+    summary: SummaryExpiration
   }
 
   const calcExpiration = (reg: Region, d: PDate) => {
     const dd: DateTime = DateTime.fromObject(d);
+    const eod = { hour: 23, minute: 59, second: 59, millisecond: 999 }
     let expd: DateTime | null = null;
     switch(reg) {
       case "50yrs":
-        expd = dd.plus({ years: 50 }).set({ month: 12, day: 31 });
+        expd = dd.plus({ years: 50 }).set({ month: 12, day: 31}).set(eod);
         break;
       case "75yrs":
-        expd = dd.plus({ years: 75 }).set({ month: 12, day: 31 });
+        expd = dd.plus({ years: 75 }).set({ month: 12, day: 31 }).set(eod);
         break;
       case "jpn":
         // Not implemented
@@ -66,6 +75,41 @@ function App() {
       day: expd.day
     }
     return result;
+  }
+  const judgeExpirationSummary = (reg: Region, d: PDate) => {
+    const dd = DateTime.fromObject(d)
+    const today = DateTime.now()
+    let smry: SummaryExpiration | null = null
+    switch(reg) {
+      case "50yrs":
+      case "75yrs":
+        smry = (today > dd) ? "pd" : "non-pd"
+        break
+      case "jpn":
+        // Not implemented
+        break
+      default:
+        smry = "placeholder"
+        break
+    }
+    if (smry == null) {
+      throw "Invalid argument"
+    }
+    const result: SummaryExpiration = smry
+    return result
+  }
+  const summaryString = (smry: SummaryExpiration) => {
+    let s: string = "(PLACEHOLDER)"
+    switch(smry) {
+      case "pd":
+        s = "PD";break
+      case "non-pd":
+        s = "non-PD";break
+      case "placeholder":
+      default:
+        break
+    }
+    return s
   }
 
   const [query_name, setQueryName] = useState<string>('')
@@ -84,12 +128,14 @@ function App() {
           else return person.name.some((n) => `${n.given} ${n.last}`.toLowerCase().includes(query_name.toLowerCase()));
         })
         .map((person) => {
+          const d_expire = calcExpiration(config_region, person.death)
           const ret: ComposerResult = {
             id: person.id,
             name: person.name,
             birth: person.birth,
             death: person.death,
-            expiration: calcExpiration(config_region, person.death)
+            expiration: d_expire,
+            summary: judgeExpirationSummary(config_region, d_expire)
           };
           return ret;
         });
@@ -130,7 +176,7 @@ function App() {
                 </div>
                 <div className="result-details">
                   <div className="summary">
-                    <span className="result-summary-placeholder">(PLACEHOLDER)</span>
+                    <span className={`result-summary-${person.summary}`}>{summaryString(person.summary)}</span>
                   </div>
                   <div className="expiration">
                     <div className="label">保護期間終了日</div>

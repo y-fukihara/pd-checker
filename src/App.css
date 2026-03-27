@@ -131,11 +131,16 @@ div#result {
   }
 }
 @media not (max-width: 40rem) {
-  .result-item .result-details .expiration {
-    div { display: inline-block; }
-    .label::after {
-      content: ":";
-      margin-right: 1ch;
+  .result-item .result-details {
+    .summary {
+      margin: .125em 0;
+    }
+    .expiration {
+      div { display: inline-block; }
+      .label::after {
+        content: ":";
+        margin-right: 1ch;
+      }
     }
   }
 }
@@ -176,7 +181,9 @@ div#result {
   display: inline-block;
   padding: .0625em .375em .125em;
   border-radius: .375rem;
-  font-weight: 700;
+  min-width: min(12ch, 100%);
+
+  font-weight: 800;
 }
 .result-summary-placeholder {
   background: #808080;
