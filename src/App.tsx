@@ -7,7 +7,7 @@ import { far } from '@fortawesome/free-regular-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 library.add(fas, far, fab)
 
-import './App.css'
+import './styles/App.css'
 import Composers from './data/composers.json'
 
 function App() {

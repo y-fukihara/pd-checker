@@ -9,7 +9,7 @@ import 'sanitize.css/typography.css'
 import 'sanitize.css/system-ui.css'
 /* Workspace and component CSS */
 import './index.css'
-import './main.css'
+import './styles/main.css'
 /* Sub-component */
 import App from './App.tsx'
 import AboutProduct from './AboutProduct.tsx'
