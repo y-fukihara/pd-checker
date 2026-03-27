@@ -3,15 +3,20 @@
 body {
   font-size: var(--base-font-size, 16px);
 }
-h1, h2 { font-weight: 550; }
+h1, h2 {
+  font-weight: 550;
+  line-height: 1.05;
+}
 p, li { margin: 1em auto; }
 
 #root {
   container-type: inline-size;
-  padding: 0 1em;
+}
+main {
+  padding: 0 5cqi;
 }
 @media only screen and (min-width: 840px) {
-  #root {
+  main {
     padding: 0 5%;
   }
 }

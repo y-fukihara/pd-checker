@@ -1,0 +1,51 @@
+:root {
+  --top-bar-background-color: hsl(15deg 50% 45%);
+  --top-bar-background-hover-color: hsl(15deg 50% 55%);
+  --top-bar-text-color: #f0f0f0;
+}
+
+header#top-bar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100cqi;
+  height: calc(1lh + 1em);
+  margin: 0 0 1em;
+
+  ul {
+    list-style-type: none;
+
+    position: absolute;
+    width: 100vw;
+    top: 0;
+    left: calc((100cqi - 100vw) / 2);
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: start;
+    align-items: center;
+    gap: .5em;
+    margin: 0;
+    padding: 0 0 0 1em;
+
+    background: var(--top-bar-background-color);
+    color: var(--top-bar-text-color);
+    font-weight: 600;
+  }
+  li {
+    display: block;
+    margin: 0 0 0;
+    padding: .5em .5em .5em;
+
+    a, a:is(:hover, :focus, :visited) {
+      color: var(--top-bar-text-color);
+      text-decoration: none;
+    }
+  }
+  li:is(:hover, :focus) {
+    background-color: var(--top-bar-background-hover-color);
+  }
+}
+main {
+  margin-top: 2em;
+}

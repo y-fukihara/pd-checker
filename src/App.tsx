@@ -152,7 +152,7 @@ function App() {
         <h2>免責事項</h2>
         <p>本ツールは法的なアドバイスを提供するものではありません。あくまで参考情報としてご利用ください。</p>
       </div>
-      <main>
+      <div id="app-main">
         <form id="form-name" name="search-by-name" accessKey="q">
           <fieldset id="field-region">
             <legend>適用ルール</legend>
@@ -246,7 +246,7 @@ function App() {
             </table>
           </div>
         </div>
-      </main>
+      </div>
     </div>
   )
 }
