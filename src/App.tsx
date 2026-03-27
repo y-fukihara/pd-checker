@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import { DateTime } from 'luxon'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { fas } from '@fortawesome/free-solid-svg-icons'
-import { far } from '@fortawesome/free-regular-svg-icons'
-import { fab } from '@fortawesome/free-brands-svg-icons'
-library.add(fas, far, fab)
+// import { library } from '@fortawesome/fontawesome-svg-core'
+// import { fas } from '@fortawesome/free-solid-svg-icons'
+// import { far } from '@fortawesome/free-regular-svg-icons'
+// import { fab } from '@fortawesome/free-brands-svg-icons'
+// library.add(fas, far, fab)
+import { faCircleQuestion } from '@fortawesome/free-regular-svg-icons'
 
 import './styles/App.css'
 import Composers from './data/composers.json'
@@ -140,6 +141,7 @@ function App() {
           return ret;
         });
 
+  const element_icon_question = <FontAwesomeIcon icon={faCircleQuestion} />
   return (
     <div id="app">
       <hgroup>
@@ -157,17 +159,17 @@ function App() {
             <div className="field-item">
               <label htmlFor="region-50yrs">50年:</label>
               <input type="radio" name="region" id="region-50yrs" onChange={() => setConfigRegion("50yrs")} />
-              <FontAwesomeIcon icon={["far", "circle-question"]} />
+              {element_icon_question}
             </div>
             <div className="field-item">
               <label htmlFor="region-75yrs">75年:</label>
               <input type="radio" defaultChecked name="region" value="75yrs" id="region-75yrs" onChange={() => setConfigRegion("75yrs")} />
-              <FontAwesomeIcon icon={["far", "circle-question"]} />
+              {element_icon_question}
             </div>
             <div className="field-item">
               <label htmlFor="region-jpn">日本 (未実装):</label>
               <input type="radio" disabled name="region" value="jpn" id="region-jpn" />
-              <FontAwesomeIcon icon={["far", "circle-question"]} />
+              {element_icon_question}
             </div>
           </fieldset>
           <label htmlFor="name">作曲家の名前:</label>
