@@ -1,6 +1,22 @@
 @import url('./global.css');
 
-div#app > div {
+hgroup h1:has(+ p) {
+  margin-bottom: .5em;
+}
+
+div#disclaimer {
+  border: 3px solid hsl(0deg 100% 25%);
+  background: hsl(0 100% 85% / .15);
+  border-radius: 1em;
+  margin: 2.5em auto;
+  padding: 1em 2em 0;
+
+  p {
+    text-align: left;
+  }
+}
+
+main > div {
   container-type: inline-size;
   margin: 1em calc((100vw - var(--max-content-width), 95vw) / 2);
   padding: 5%;
