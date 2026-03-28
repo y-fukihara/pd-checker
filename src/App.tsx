@@ -53,7 +53,7 @@ function App() {
   const calcExpiration = (reg: Region, d: PDate) => {
     const dd: DateTime = DateTime.fromObject(d);
     const eod = { hour: 23, minute: 59, second: 59, millisecond: 999 }
-    let expd: DateTime | null = null;
+    let expd: DateTime | undefined = undefined;
     switch(reg) {
       case "50yrs":
         expd = dd.plus({ years: 50 }).set({ month: 12, day: 31}).set(eod);
@@ -67,7 +67,7 @@ function App() {
       default:
         break;
     }
-    if (expd == null) {
+    if (expd == undefined) {
       throw "Invalid argument";
     }
     const result: PDate = {
@@ -80,7 +80,7 @@ function App() {
   const judgeExpirationSummary = (reg: Region, d: PDate) => {
     const dd = DateTime.fromObject(d)
     const today = DateTime.now()
-    let smry: SummaryExpiration | null = null
+    let smry: SummaryExpiration | undefined = undefined
     switch(reg) {
       case "50yrs":
       case "75yrs":
@@ -93,7 +93,7 @@ function App() {
         smry = "placeholder"
         break
     }
-    if (smry == null) {
+    if (smry == undefined) {
       throw "Invalid argument"
     }
     const result: SummaryExpiration = smry
