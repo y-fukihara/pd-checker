@@ -14,7 +14,7 @@ import type {
   // Personal Data Types
   PName, PDate, ComposersJSON, 
   // Result Data Types
-  SummaryExpiration
+  SummaryExpiration,
 } from './types.ts'
 import './styles/App.css'
 import Composers from './data/composers.json'

@@ -26,6 +26,6 @@ export type ComposersJSON = {
 
 /* Result Data Types */
 export type SummaryExpiration
-  = "placeholder"
-  | "pd"
-  | "non-pd"
+  = "placeholder"   // placeholder
+  | "pd"            // public domain (almost surely)
+  | "non-pd"        // not public domain (basically for all works)
