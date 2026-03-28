@@ -8,7 +8,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // library.add(fas, far, fab)
 import { faCircleQuestion } from '@fortawesome/free-regular-svg-icons'
 
-import type { Region, PName, PDate, ComposersJSON, SummaryExpiration } from './types.ts'
+import type {
+  // Configuration Data Types
+  Region, 
+  // Personal Data Types
+  PName, PDate, ComposersJSON, 
+  // Result Data Types
+  SummaryExpiration } from './types.ts'
 import './styles/App.css'
 import Composers from './data/composers.json'
 

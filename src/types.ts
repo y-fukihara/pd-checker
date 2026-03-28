@@ -1,7 +1,7 @@
 /* Configuration Data Types */
 export type Region = "50yrs" | "75yrs" | "jpn"
 
-/* Person Data Types */
+/* Personal Data Types */
 export type PName = {
   lang: string
   last: string
