@@ -8,39 +8,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // library.add(fas, far, fab)
 import { faCircleQuestion } from '@fortawesome/free-regular-svg-icons'
 
+import type { Region, PName, PDate, ComposersJSON, SummaryExpiration } from './types.ts'
 import './styles/App.css'
 import Composers from './data/composers.json'
 
 function App() {
-  /* Configuration Data Types */
-  type Region = "50yrs" | "75yrs" | "jpn"
-/*
-  type Configuration = {
-    region: Region
-  }
-*/
-  /* Person Data Types */
-  type PName = {
-    lang: string
-    last: string
-    given: string
-  }
-  type PDate = {
-    year: number
-    month: number
-    day: number
-  }
-  type ComposersJSON = {
-    id: number,
-    name: PName[]
-    birth: PDate
-    death: PDate
-  }
-  /* Result Data Types */
-  type SummaryExpiration
-    = "placeholder"
-    | "pd"
-    | "non-pd"
   type ComposerResult = {
     id: number
     name: PName[]
