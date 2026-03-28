@@ -1,7 +1,7 @@
-import type React from "react";
 import './styles/Header.css'
+import { Outlet } from "react-router";
 
-function Header({ children }: { children: React.ReactNode }) {
+function Header() {
   return(
     <div id="wrapper">
       <header id="top-bar">
@@ -11,7 +11,7 @@ function Header({ children }: { children: React.ReactNode }) {
         </ul>
       </header>
       <main>
-        {children}
+        <Outlet />
       </main>
     </div>
   )
