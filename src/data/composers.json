@@ -14,7 +14,10 @@
       }
     ],
     "birth": { "year": 1756, "month": 1, "day": 27 },
-    "death": { "year": 1791, "month": 12, "day": 5 }
+    "death": { "year": 1791, "month": 12, "day": 5 },
+    "country": [
+      "aut", "che", "deu", "fra", "gbr", "ita", "nld"
+    ]
   },
   {
     "id": 2,
@@ -31,7 +34,8 @@
       }
     ],
     "birth": { "year": 1685, "month": 3, "day": 21 },
-    "death": { "year": 1750, "month": 7, "day": 28 }
+    "death": { "year": 1750, "month": 7, "day": 28 },
+    "country": [ "deu" ]
   },
   {
     "id": 3,
@@ -48,7 +52,8 @@
       }
     ],
     "birth": { "year": 1770, "month": 12, "day": 16 },
-    "death": { "year": 1827, "month": 3, "day": 26 }
+    "death": { "year": 1827, "month": 3, "day": 26 },
+    "country": [ "deu", "aut" ]
   },
   {
     "id": 4,
@@ -70,7 +75,8 @@
       }
     ],
     "birth": { "year": 1840, "month": 5, "day": 7 },
-    "death": { "year": 1893, "month": 11, "day": 6 }
+    "death": { "year": 1893, "month": 11, "day": 6 },
+    "country": [ "rus" ]
   },
   {
     "id": 5,
@@ -87,7 +93,8 @@
       }
     ],
     "birth": { "year": 1895, "month": 11, "day": 16 },
-    "death": { "year": 1963, "month": 12, "day": 28 }
+    "death": { "year": 1963, "month": 12, "day": 28 },
+    "country": [ "deu", "che", "usa" ]
   },
   {
     "id": 6,
@@ -109,7 +116,8 @@
       }
     ],
     "birth": { "year": 1882, "month": 6, "day": 17 },
-    "death": { "year": 1971, "month": 4, "day": 6 }
+    "death": { "year": 1971, "month": 4, "day": 6 },
+    "country": [ "rus", "che", "fra", "usa" ]
   },
   {
     "id": 7,
@@ -126,7 +134,8 @@
       }
     ],
     "birth": { "year": 1804, "month": 3, "day": 14 },
-    "death": { "year": 1849, "month": 9, "day": 25 }
+    "death": { "year": 1849, "month": 9, "day": 25 },
+    "country": [ "aut" ]
   },
   {
     "id": 8,
@@ -143,7 +152,8 @@
       }
     ],
     "birth": { "year": 1825, "month": 10, "day": 20 },
-    "death": { "year": 1899, "month": 9, "day": 8 }
+    "death": { "year": 1899, "month": 9, "day": 8 },
+    "country": [ "aut" ]
   },
   {
     "id": 9,
@@ -160,7 +170,8 @@
       }
     ],
     "birth": { "year": 1864, "month": 6, "day": 11 },
-    "death": { "year": 1949, "month": 9, "day": 8 }
+    "death": { "year": 1949, "month": 9, "day": 8 },
+    "country": [ "deu" ]
   },
   {
     "id": 10,
@@ -177,6 +188,7 @@
       }
     ],
     "birth": { "year": 1813, "month": 5, "day": 22 },
-    "death": { "year": 1883, "month": 2, "day": 13 }
+    "death": { "year": 1883, "month": 2, "day": 13 },
+    "country": [ "deu", "rus", "fra", "che" ]
   }
 ]

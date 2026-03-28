@@ -1,6 +1,19 @@
 /* Configuration Data Types */
 export type Region = "50yrs" | "75yrs" | "jpn"
 
+/* Country Data Types:
+    Implemented only places where some registered was there */
+export type Country
+  = "aut" // オーストリア
+  | "che" // スイス
+  | "deu" // ドイツ
+  | "fra" // フランス
+  | "gbr" // イギリス
+  | "ita" // イタリア
+  | "nld" // オランダ
+  | "rus" // ロシア
+  | "usa" // アメリカ
+
 /* Personal Data Types */
 export type PName = {
   lang: string
@@ -13,10 +26,11 @@ export type PDate = {
   day: number
 }
 export type ComposersJSON = {
-  id: number,
+  id: number
   name: PName[]
   birth: PDate
   death: PDate
+  country: Country[]
 }
 /*
   type Configuration = {
