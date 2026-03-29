@@ -3,6 +3,22 @@
 body {
   font-size: var(--base-font-size, 16px);
 }
+body, #wrapper {
+  height: 100vh;
+  overflow-y: hidden;
+}
+#root {
+  container-type: inline-size;
+  height: 100vh;
+  overflow-y: hidden;
+}
+@media (max-width: 1126px) {
+  #root {
+    width: 100vw;
+    margin: 0 0;
+    box-sizing: border-box;
+  }
+}
 h1, h2 {
   font-weight: 550;
   line-height: 1.05;
@@ -31,15 +47,21 @@ article > :not(header) {
 p { margin: 1em auto; }
 dt { font-weight: bold; }
 
-#root {
-  container-type: inline-size;
-}
 main {
   padding: 0 5cqi;
+  height: calc(100vh - 1em - 1lh);
+  overflow-y: scroll;
+  scrollbar-width: var(--scrollbar-margin, .75em);
+}
+@media (max-width: 1126px) {
+  main {
+    padding-right: calc(5cqi - var(--scrollbar-margin, .75em));
+  }
 }
 @media only screen and (min-width: 840px) {
   main {
     padding: 0 5%;
+    padding-right: calc(5% - var(--scrollbar-margin, .75em));
   }
 }
 

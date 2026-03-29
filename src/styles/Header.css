@@ -10,7 +10,7 @@ header#top-bar {
   left: 0;
   width: 100cqi;
   height: calc(1lh + 1em);
-  margin: 0 0 1em;
+  margin: 0 0 0;
 
   ul {
     list-style-type: none;
@@ -47,5 +47,5 @@ header#top-bar {
   }
 }
 main {
-  margin-top: 2em;
+  padding-top: 2em;
 }

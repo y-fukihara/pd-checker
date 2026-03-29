@@ -12,4 +12,6 @@
   --text: var(--text-color, #6b6375);
 
   --ul-border-color: gray;
+
+  --scrollbar-margin: 16px;
 }
