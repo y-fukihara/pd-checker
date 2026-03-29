@@ -279,6 +279,8 @@ const calcExpiration = (reg: Region, cts: Country[], birth: PDate, death: PDate)
         wartime_extension = cts.map((ct) => {
           return calcMostExpandedWartime_jpn(ct, birth, death)
         })
+      } else if (dd.plus({ years: 50 }).year >= 1919) {
+        wartime_extension = cts.includes("fra") ? [Duration.fromObject({ year: 6, day: 152 })] : []
       }
 
       if (wartime_extension.length === 0) {

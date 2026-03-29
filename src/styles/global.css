@@ -2,8 +2,14 @@
   --max-content-width: min(95vw, 1200px);
   --base-font-size: 16px;
 
+  --background-color: hsl(300deg 5% 85%);
+
   --heading-font: 'Meiryo', "SF Pro Display", "Ubuntu", "Helvetica Neue", "Noto Sans JP", sans-serif;
+  --heading-color: black;
   --heading: var(--heading-font);
+
+  --text-color: #454545;
+  --text: var(--text-color, #6b6375);
 
   --ul-border-color: gray;
 }

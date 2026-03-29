@@ -1,16 +1,26 @@
 @import url('./global.css');
 
+html {
+  background-color: var(--background-color, white);
+}
+
 hgroup h1:has(+ p) {
   margin-bottom: .5em;
 }
 
-div#disclaimer {
+#disclaimer {
   border: 3px solid hsl(0deg 100% 25%);
   background: hsl(0 100% 85% / .15);
   border-radius: 1em;
   margin: 2.5em auto;
   padding: 1em 2em 0;
 
+  h2 {
+    border-bottom: none;
+    margin-top: unset;
+
+    text-align: center;
+  }
   p {
     text-align: left;
   }
@@ -53,7 +63,7 @@ fieldset#field-region {
   }
 }
 
-div#result {
+div#result, div.result-demo {
   text-align: center;
 
   span#show-query {
@@ -69,7 +79,7 @@ div#result {
     text-align: left;
   }
 
-  #result-list {
+  #result-list, .result-demo-list {
     --item-border-radius: 8px;
     width: 100%;
     min-height: 5em;
@@ -146,6 +156,9 @@ div#result {
     }
   }
 }
+.result-demo .result-item {
+  display: block;
+}
 @media not (max-width: 40rem) {
   .result-item .result-details {
     .summary {
@@ -195,10 +208,12 @@ div#result {
 
 [class*="result-summary-"] {
   display: inline-block;
+  margin: 0 .2ch;
   padding: .0625em .375em .125em;
   border-radius: .375rem;
   min-width: min(12ch, 100%);
 
+  text-align: center;
   font-weight: 800;
 }
 .result-summary-placeholder {

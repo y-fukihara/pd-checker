@@ -7,7 +7,29 @@ h1, h2 {
   font-weight: 550;
   line-height: 1.05;
 }
-p, li { margin: 1em auto; }
+h2 {
+  border-bottom: 4px dotted var(--ui-border-color, gray);
+  margin-top: 1.4em;
+}
+h3, h4, h5, h6 {
+  color: var(--heading-color, black);
+}
+header {
+  margin: 1.2em 0 1.5em;
+
+  h1:has(+ :is(p, address)) {
+    margin-bottom: .25em;
+  }
+  p:has(time) {
+    text-align: right;
+    margin-top: .2em;
+  }
+} 
+article > :not(header) {
+  text-align: left;
+}
+p { margin: 1em auto; }
+dt { font-weight: bold; }
 
 #root {
   container-type: inline-size;
@@ -35,3 +57,9 @@ form {
   }
 }
 
+/* 国旗 */
+svg.flag {
+  height: 1em;
+  margin-inline: .2ch;
+  vertical-align: -0.125em;
+}

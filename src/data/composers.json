@@ -16,7 +16,7 @@
     "birth": { "year": 1756, "month": 1, "day": 27 },
     "death": { "year": 1791, "month": 12, "day": 5 },
     "country": [
-      "aut", "che", "deu", "fra", "gbr", "ita", "nld"
+      "aut", "deu"
     ]
   },
   {
