@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { DateTime } from 'luxon'
+import { DateTime, Duration } from 'luxon'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { library } from '@fortawesome/fontawesome-svg-core'
 // import { fas } from '@fortawesome/free-solid-svg-icons'
@@ -9,12 +9,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleQuestion } from '@fortawesome/free-regular-svg-icons'
 
 import type {
+  // General Types
+  Maybe, Finally,
   // Configuration Data Types
   Region, 
   // Personal Data Types
   PName, PDate, ComposersJSON, 
   // Result Data Types
   SummaryExpiration,
+  Country,
 } from './types.ts'
 import './styles/App.css'
 import Composers from './data/composers.json'
@@ -29,54 +32,33 @@ function App() {
     summary: SummaryExpiration
   }
 
-  const calcExpiration = (reg: Region, d: PDate) => {
-    const dd: DateTime = DateTime.fromObject(d);
-    const eod = { hour: 23, minute: 59, second: 59, millisecond: 999 }
-    let expd: DateTime | undefined = undefined;
-    switch(reg) {
-      case "50yrs":
-        expd = dd.plus({ years: 50 }).set({ month: 12, day: 31}).set(eod);
-        break;
-      case "75yrs":
-        expd = dd.plus({ years: 75 }).set({ month: 12, day: 31 }).set(eod);
-        break;
-      case "jpn":
-        // Not implemented
-        break;
-      default:
-        break;
+  const judgeExpirationSummary = (reg: Region, ds: PDate[]) => {
+    if (ds.length === 0) {
+      throw "Invalid argument"
     }
-    if (expd == undefined) {
-      throw "Invalid argument";
-    }
-    const result: PDate = {
-      year: expd.year,
-      month: expd.month,
-      day: expd.day
-    }
-    return result;
-  }
-  const judgeExpirationSummary = (reg: Region, d: PDate) => {
-    const dd = DateTime.fromObject(d)
+    const dd = ds.map((d) => d as DateTime)
+    const earliest_dd = dd.reduce((a, b) => a < b ? a : b)
+    const latest_dd = dd.reduce((a, b) => a > b ? a : b)
     const today = DateTime.now()
-    let smry: SummaryExpiration | undefined = undefined
+    let smry: Finally<SummaryExpiration>
     switch(reg) {
       case "50yrs":
       case "75yrs":
-        smry = (today > dd) ? "pd" : "non-pd"
+        smry = (today > latest_dd) ? "pd" : "non-pd"
         break
       case "jpn":
-        // Not implemented
+        if (today > latest_dd) smry = "pd"
+        else if (today < earliest_dd) smry = "non-pd"
+        else smry = "partial-pd"
         break
       default:
         smry = "placeholder"
         break
     }
-    if (smry == undefined) {
+    if (smry === undefined) {
       throw "Invalid argument"
     }
-    const result: SummaryExpiration = smry
-    return result
+    return smry as SummaryExpiration
   }
   const summaryString = (smry: SummaryExpiration) => {
     let s: string = "(PLACEHOLDER)"
@@ -85,6 +67,8 @@ function App() {
         s = "PD";break
       case "non-pd":
         s = "non-PD";break
+      case "partial-pd":
+        s = "partial-PD";break
       case "placeholder":
       default:
         break
@@ -108,14 +92,15 @@ function App() {
           else return person.name.some((n) => `${n.given} ${n.last}`.toLowerCase().includes(query_name.toLowerCase()));
         })
         .map((person) => {
-          const d_expire = calcExpiration(config_region, person.death)
+          const ds_expire: DateTime[] = calcExpiration(config_region, person.country, person.birth, person.death)
+          const d_expire: DateTime = ds_expire.reduce((a, b) => a > b ? a : b)
           const ret: ComposerResult = {
             id: person.id,
             name: person.name,
             birth: person.birth,
             death: person.death,
-            expiration: d_expire,
-            summary: judgeExpirationSummary(config_region, d_expire)
+            expiration: d_expire as PDate,
+            summary: judgeExpirationSummary(config_region, ds_expire as PDate[])
           };
           return ret;
         });
@@ -146,8 +131,8 @@ function App() {
               {element_icon_question}
             </div>
             <div className="field-item">
-              <label htmlFor="region-jpn">日本 (未実装):</label>
-              <input type="radio" disabled name="region" value="jpn" id="region-jpn" />
+              <label htmlFor="region-jpn">日本:</label>
+              <input type="radio" name="region" value="jpn" id="region-jpn" onChange={() => setConfigRegion("jpn")} />
               {element_icon_question}
             </div>
           </fieldset>
@@ -231,3 +216,93 @@ function App() {
 }
 
 export default App
+
+// ========================================================================
+
+const calcMostExpandedWartime_jpn = (ctr: Country, birth: PDate, death: PDate) => {
+  // memo: 簡単のため、最大の戦時加算（と見積もられる日数）のみを返値としている
+  const bd: DateTime = DateTime.fromObject(birth)
+  const dd: DateTime = DateTime.fromObject(death)
+  let ds: Maybe<Duration> = null
+  /* 戦時加算日数
+    オーストリア: なし (当時ドイツに併合されていたため)
+    スイス: なし（中立国）
+    ドイツ: なし（制度はあったが、著作権延長の申出がなかったため）
+    フランス: 8年120日もしくは14年272日（フランス知的所有権法典第123の8条・9条に基づく）
+    イギリス: 3794日
+    イタリア: 6年（イタリア平和条約第15条付属書に基づく）
+    オランダ: 3844日
+    ロシア: なし（サンフランシスコ平和条約非署名）
+    アメリカ: 3794日
+   */
+  if (dd.plus({ years: 50 }).year >= 1941) {
+    if (ctr === "fra" && bd < DateTime.fromObject({ year: 1914, month: 8, day: 2 })) {
+      ds = Duration.fromObject({ year: 14, day: 272 })
+    } else if (ctr === "nld") {
+      ds = Duration.fromObject({ day: 3844 })
+    } else if (ctr === "gbr" || ctr === "usa") {
+      ds = Duration.fromObject({ day: 3794 })
+    } else if (ctr === "fra" && bd < DateTime.fromObject({ year: 1939, month: 9, day: 3 })) {
+      ds = Duration.fromObject({ year: 8, day: 120 })
+    } else if (ctr !== "ita") {
+      ds = Duration.fromObject({ day: 0 })
+    }
+  }
+  if (bd < DateTime.fromObject({ year: 1947, month: 9, day: 15 }) && dd.plus({ years: 50 }).year >= 1947 && ctr === "ita" && (ds === null || ds < Duration.fromObject({ year: 6 }))) {
+    ds = Duration.fromObject({ year: 6 })
+  } else if (ctr === "ita" && ds === null) {
+    ds = Duration.fromObject({ day: 0 })
+  }
+  return ds
+}
+const calcExpiration = (reg: Region, cts: Country[], birth: PDate, death: PDate) => {
+  const bd: DateTime = DateTime.fromObject(birth)
+  const dd: DateTime = DateTime.fromObject(death)
+  let expd: DateTime[] | undefined = undefined
+  let wartime_extension: Maybe<Duration>[] = []
+
+  // const bod = { hour: 0, minute: 0, second: 0, millisecond: 0 }
+  const eod = { hour: 23, minute: 59, second: 59, millisecond: 999 }
+
+  //const date_decl_pacific_war: DateTime = DateTime.fromObject({ year: 1941, month: 12, day: 8 })
+  //const date__tpp_extension: DateTime = DateTime.fromObject({ year: 2018, month: 12, day: 30 })
+
+  switch(reg) {
+    case "50yrs":
+      expd = [dd.plus({ years: 50 }).set({ month: 12, day: 31}).set(eod)];
+      break;
+    case "75yrs":
+      expd = [dd.plus({ years: 75 }).set({ month: 12, day: 31 }).set(eod)];
+      break;
+    case "jpn":
+      if (bd.year <= 1980 && dd.plus({ years: 50 }).year >= 1941) {
+        wartime_extension = cts.map((ct) => {
+          return calcMostExpandedWartime_jpn(ct, birth, death)
+        })
+      }
+
+      if (wartime_extension.length === 0) {
+        if (dd.plus({ years: 50 }).year >= 2018) {
+          expd = [dd.plus({ years: 70 }).set({ month: 12, day: 31 }).set(eod)]
+        } else {
+          expd = [dd.plus({ years: 50 }).set({ month: 12, day: 31 }).set(eod)]
+        }
+      } else {
+        expd = wartime_extension.map((ds) => {
+          if (dd.plus({ years: 50 }).plus(ds ?? { day: 0 }).year >= 2018) {
+            return dd.plus({ years: 70 }).set({ month: 12, day: 31 }).plus(ds ?? { day: 0 }).set(eod)
+          } else {
+            return dd.plus({ years: 50 }).set({ month: 12, day: 31 }).plus(ds ?? { day: 0 }).set(eod)
+          }
+        })
+      }
+      break;
+    default:
+      break;
+  }
+  if (expd == undefined) {
+    throw "Invalid argument";
+  }
+
+  return expd as DateTime[];
+}

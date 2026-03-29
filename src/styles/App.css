@@ -213,6 +213,11 @@ div#result {
   background: hsl(0, 100%, 35%);
   color: white;
 }
+.result-summary-partial-pd {
+  background: hsl(60, 100%, 45%);
+  color: #202020;
+  outline: 2px solid #202020;
+}
 
 div#composers-list {
   text-align: left;
