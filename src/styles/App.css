@@ -33,14 +33,24 @@ div#app-main > div {
 }
 
 fieldset#field-region {
-  display: flex;
-  flex-flow: row wrap;
-  gap: 1.2em;
-
-  padding-inline: 1.25em;
-
   label {
     margin-right: .6ch;
+  }
+
+  div.items {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 100%;
+
+    gap: 1.2em;
+
+    padding-inline: 1.25em;
+
+    div.field-item {
+      display: block;
+      width: fit-content;
+    }
   }
 
   input[type="radio"] {
@@ -61,6 +71,10 @@ fieldset#field-region {
   fieldset#field-region {
     gap: 1em;
   }
+}
+
+#result p:has(#show-query):has(+ #field-result-lang) {
+  margin-bottom: .5em;
 }
 
 div#result, div.result-demo {

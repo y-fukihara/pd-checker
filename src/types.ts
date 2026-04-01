@@ -36,10 +36,14 @@ export type ComposersJSON = {
   death: PDate
   country: Country[]
 }
+
+/* Configuration Types */
+export type ResultLang = "eng" | "jpn"
 /*
-  type Configuration = {
-    region: Region
-  }
+export type Configuration = {
+  region: Region
+  lang: ResultLang
+}
 */
 
 /* Result Data Types */

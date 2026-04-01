@@ -1,23 +1,24 @@
 import { useState } from 'react'
 import { DateTime, Duration } from 'luxon'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { library } from '@fortawesome/fontawesome-svg-core'
 // import { fas } from '@fortawesome/free-solid-svg-icons'
 // import { far } from '@fortawesome/free-regular-svg-icons'
 // import { fab } from '@fortawesome/free-brands-svg-icons'
 // library.add(fas, far, fab)
-import { faCircleQuestion } from '@fortawesome/free-regular-svg-icons'
+// import { faCircleQuestion } from '@fortawesome/free-regular-svg-icons'
 
-import type {
+import {
   // General Types
-  Maybe, Finally,
+  type Maybe, type Finally,
   // Configuration Data Types
-  Region, 
+  type Region, 
   // Personal Data Types
-  PName, PDate, ComposersJSON, 
+  type PName, type PDate, type ComposersJSON, 
   // Result Data Types
-  SummaryExpiration,
-  Country,
+  type SummaryExpiration,
+  type Country,
+  type ResultLang,
 } from './types.ts'
 import './styles/App.css'
 import Composers from './data/composers.json'
@@ -25,7 +26,7 @@ import Composers from './data/composers.json'
 function App() {
   type ComposerResult = {
     id: number
-    name: PName[]
+    name: PName
     birth: PDate
     death: PDate
     expiration: PDate
@@ -34,7 +35,7 @@ function App() {
 
   const judgeExpirationSummary = (reg: Region, ds: PDate[]) => {
     if (ds.length === 0) {
-      throw "Invalid argument"
+      throw "Invalid argument: empty dates (@ judgeExpirationSummary)"
     }
     const dd = ds.map((d) => d as DateTime)
     const earliest_dd = dd.reduce((a, b) => a < b ? a : b)
@@ -56,7 +57,7 @@ function App() {
         break
     }
     if (smry === undefined) {
-      throw "Invalid argument"
+      throw "Invalid argument: Resulting no summary (@ judgeExpirationSummary)"
     }
     return smry as SummaryExpiration
   }
@@ -77,7 +78,8 @@ function App() {
   }
 
   const [query_name, setQueryName] = useState<string>('')
-  const [config_region, setConfigRegion] = useState<Region>("75yrs")
+  const [config_region, setConfigRegion] = useState<Region>("jpn")
+  const [config_result_lang, setConfigResultLang] = useState<ResultLang>("jpn")
 
 /*
   const config: Configuration = {
@@ -94,9 +96,24 @@ function App() {
         .map((person) => {
           const ds_expire: DateTime[] = calcExpiration(config_region, person.country, person.birth, person.death)
           const d_expire: DateTime = ds_expire.reduce((a, b) => a > b ? a : b)
+          let p_name: Finally<PName>;
+          switch(config_result_lang) {
+            case "jpn":
+              p_name = person.name.find((name) => name.lang === "ja")
+              break
+            case "eng":
+              p_name = person.name[0]
+              break
+            default:
+              p_name = person.name[0]
+              break
+          }
+          if (p_name === undefined) {
+            throw "Invalid argument (in constructing composerResultList): config_result_lang = "+config_result_lang
+          }
           const ret: ComposerResult = {
             id: person.id,
-            name: person.name,
+            name: p_name,
             birth: person.birth,
             death: person.death,
             expiration: d_expire as PDate,
@@ -105,7 +122,7 @@ function App() {
           return ret;
         });
 
-  const element_icon_question = <FontAwesomeIcon icon={faCircleQuestion} />
+//  const element_icon_question = <FontAwesomeIcon icon={faCircleQuestion} />
   return (
     <div id="app">
       <hgroup>
@@ -120,20 +137,19 @@ function App() {
         <form id="form-name" name="search-by-name" accessKey="q">
           <fieldset id="field-region">
             <legend>適用ルール</legend>
-            <div className="field-item">
-              <label htmlFor="region-50yrs">50年:</label>
-              <input type="radio" name="region" id="region-50yrs" onChange={() => setConfigRegion("50yrs")} />
-              {element_icon_question}
-            </div>
-            <div className="field-item">
-              <label htmlFor="region-75yrs">75年:</label>
-              <input type="radio" defaultChecked name="region" value="75yrs" id="region-75yrs" onChange={() => setConfigRegion("75yrs")} />
-              {element_icon_question}
-            </div>
-            <div className="field-item">
-              <label htmlFor="region-jpn">日本:</label>
-              <input type="radio" name="region" value="jpn" id="region-jpn" onChange={() => setConfigRegion("jpn")} />
-              {element_icon_question}
+            <div className="items">
+              <div className="field-item">
+                <label htmlFor="region-jpn">日本:</label>
+                <input type="radio" defaultChecked name="region" value="jpn" id="region-jpn" onChange={() => setConfigRegion("jpn")} />
+              </div>
+              <div className="field-item">
+                <label htmlFor="region-50yrs">50年:</label>
+                <input type="radio" name="region" id="region-50yrs" onChange={() => setConfigRegion("50yrs")} />
+              </div>
+              <div className="field-item">
+                <label htmlFor="region-75yrs">75年:</label>
+                <input type="radio" name="region" value="75yrs" id="region-75yrs" onChange={() => setConfigRegion("75yrs")} />
+              </div>
             </div>
           </fieldset>
           <label htmlFor="name">作曲家の名前:</label>
@@ -142,12 +158,16 @@ function App() {
         <div id="result">
           <h2>検索結果</h2>
           <p>検索クエリ: <span id="show-query">{query_name}</span></p>
+          <div id="field-result-lang">
+            <label htmlFor="result-lang-jpn">名前をカナで表示する:</label>
+            <input type="checkbox" defaultChecked id="result-lang-jpm" name="result-lang" value="jpn" onChange={(e) => {setConfigResultLang((e.target.checked) ? "jpn" : "eng")}} />
+          </div>
           <div id="result-list">
             {composersResultList
               .map((person) => (
                 <div key={`result-${person.id}`} className="result-item">
                   <div className="result-heading">
-                    <span className="familyname">{person.name[0].last},</span> {person.name[0].given}
+                    <span className="familyname">{person.name.last},</span> {person.name.given}
                   </div>
                   <div className="result-details">
                     <div className="summary">
@@ -303,7 +323,7 @@ const calcExpiration = (reg: Region, cts: Country[], birth: PDate, death: PDate)
       break;
   }
   if (expd == undefined) {
-    throw "Invalid argument";
+    throw "Invalid argument (@ calcExpiration)";
   }
 
   return expd as DateTime[];
