@@ -11,8 +11,10 @@ export type Country
   = "aut" // オーストリア
   | "che" // スイス
   | "deu" // ドイツ
+  | "esp" // スペイン
   | "fra" // フランス
   | "gbr" // イギリス
+  | "hun" // ハンガリー
   | "ita" // イタリア
   | "nld" // オランダ
   | "rus" // ロシア

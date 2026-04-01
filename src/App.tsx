@@ -155,6 +155,12 @@ function App() {
           <label htmlFor="name">作曲家の名前:</label>
           <input type="text" id="name" name="name" onChange={(e) => {setQueryName(e.target.value)}}></input>
         </form>
+        <form id="form-dates" name="search-by-names" accessKey="d">
+          <div className="field-item">
+            <label htmlFor="dates-mode">日付を直接入力:</label>
+            <input type="checkbox" disabled name="switch-dates-mode" id="dates-mode" />
+          </div>
+        </form>
         <div id="result">
           <h2>検索結果</h2>
           <p>検索クエリ: <span id="show-query">{query_name}</span></p>
@@ -193,43 +199,46 @@ function App() {
             }
           </div>
         </div>
-        <div id="composers-list">
-          <div className="wrapper">
-            <h2>Composers List</h2>
-            <table>
-              <colgroup>
-                <col className="composer-id" />
-                <col className="composer-name" />
-                <col className="composer-birth" />
-                <col className="composer-death" />
-              </colgroup>
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Name</th>
-                  <th>Birth</th>
-                  <th>Death</th>
-                </tr>
-              </thead>
-              <tbody>
-                {composersList.map((person) => (
-                  <tr key={`list-${person.id}`}>
-                    <td>{person.id}</td>
-                    <td>
-                      {person.name[0].last}, {person.name[0].given}
-                    </td>
-                    <td>
-                      {person.birth.year}-{person.birth.month.toString().padStart(2, '0')}-{person.birth.day.toString().padStart(2, '0')}
-                    </td>
-                    <td>
-                      {person.death.year}-{person.death.month.toString().padStart(2, '0')}-{person.death.day.toString().padStart(2, '0')}
-                    </td>
+        {(import.meta.env.DEV) ? (
+          // 開発モードのみ: 全作曲家リスト
+          <div id="composers-list">
+            <div className="wrapper">
+              <h2>Composers List</h2>
+              <table>
+                <colgroup>
+                  <col className="composer-id" />
+                  <col className="composer-name" />
+                  <col className="composer-birth" />
+                  <col className="composer-death" />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Birth</th>
+                    <th>Death</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {composersList.map((person) => (
+                    <tr key={`list-${person.id}`}>
+                      <td>{person.id}</td>
+                      <td>
+                        {person.name[0].last}, {person.name[0].given}
+                      </td>
+                      <td>
+                        {person.birth.year}-{person.birth.month.toString().padStart(2, '0')}-{person.birth.day.toString().padStart(2, '0')}
+                      </td>
+                      <td>
+                        {person.death.year}-{person.death.month.toString().padStart(2, '0')}-{person.death.day.toString().padStart(2, '0')}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
-        </div>
+        ) : null}
       </div>
     </div>
   )

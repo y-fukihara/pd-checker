@@ -1,4 +1,4 @@
-import { AT, CH, DE, FR, GB, IT, JP, NL, RU, US } from 'country-flag-icons/react/3x2';
+import { AT, CH, DE, ES, FR, GB, HU, IT, JP, NL, RU, US } from 'country-flag-icons/react/3x2';
 import './styles/App.css'
 
 function AboutProduct() {
@@ -96,7 +96,8 @@ function AboutProduct() {
         </p>
         <p>
           以下では、プログラム上実装済みであるルールのみを記載しています。
-          オーストリアは当時ドイツ占領下であったため、スイスは中立国であったため、ドイツとロシアはサンフランシスコ平和条約の批准国ではないため、戦時加算はありません。
+          戦時加算はサンフランシスコ平和条約の批准国（の一部）の著作物に対して発生するものであるため、
+          枢軸国・中立国その他の理由でこの条約を批准していない国に対して戦時加算は発生しません。
         </p>
         <dl>
           <dt>アメリカ<US className="flag" />・イギリス<GB className="flag" /></dt>
@@ -107,7 +108,7 @@ function AboutProduct() {
           <dd>8年120日もしくは14年272日（後述）</dd>
           <dt>イタリア<IT className="flag" /></dt>
           <dd>6年（後述）</dd>
-          <dt>オーストリア<AT className="flag" />・スイス<CH className="flag" />・ドイツ<DE className="flag" />・ロシア<RU className="flag" /></dt>
+          <dt>オーストリア<AT className="flag" />・スイス<CH className="flag" />・スペイン<ES className="flag" />・ドイツ<DE className="flag" />・ハンガリー<HU className="flag" />・ロシア<RU className="flag" /></dt>
           <dd>なし</dd>
         </dl>
         <h3>著作された本国における著作権のルールの影響</h3>
