@@ -522,7 +522,7 @@
     "id": 29,
     "name": [
       {
-        "lang": "at",
+        "lang": "de",
         "last": "Hummel",
         "given": "Johann Nepomuk"
       },
@@ -553,5 +553,190 @@
     "birth": { "year": 1819, "month": 6, "day": 20 },
     "death": { "year": 1880, "month": 10, "day": 5 },
     "country": [ "deu", "fra" ]
+  },
+  {
+    "id": 31,
+    "name": [
+      {
+        "lang": "it",
+        "last": "Verdi",
+        "given": "Giuseppe Fortunino Francesco"
+      },
+      {
+        "lang": "ja",
+        "last": "ヴェルディ",
+        "given": "ジュゼッペ・フォルトゥニーノ・フランチェスコ"
+      }
+    ],
+    "birth": { "year": 1813, "month": 10, "day": 10 },
+    "death": { "year": 1901, "month": 1, "day": 27 },
+    "country": [ "ita" ]
+  },
+  {
+    "id": 32,
+    "name": [
+      {
+        "lang": "de",
+        "last": "Liszt",
+        "given": "Franz"
+      },
+      {
+        "lang": "hu",
+        "last": "Liszt",
+        "given": "Ferenc"
+      },
+      {
+        "lang": "ja",
+        "last": "リスト",
+        "given": "フランツ"
+      }
+    ],
+    "birth": { "year": 1811, "month": 10, "day": 22 },
+    "death": { "year": 1886, "month": 7, "day": 31 },
+    "country": [ "hun", "aut", "deu" ]
+  },
+  {
+    "id": 33,
+    "name": [
+      {
+        "lang": "de",
+        "last": "Schumann",
+        "given": "Robert Alexander"
+      },
+      {
+        "lang": "ja",
+        "last": "シューマン",
+        "given": "ロベルト・アレクサンダー"
+      }
+    ],
+    "birth": { "year": 1810, "month": 6, "day": 8 },
+    "death": { "year": 1856, "month": 7, "day": 29 },
+    "country": [ "deu" ]
+  },
+  {
+    "id": 34,
+    "name": [
+      {
+        "lang": "de",
+        "last": "Wieck-Schumann",
+        "given": "Clara Josephine"
+      },
+      {
+        "lang": "ja",
+        "last": "ヴィーク・シューマン",
+        "given": "クラーラ・ヨゼフィーネ"
+      }
+    ],
+    "birth": { "year": 1819, "month": 9, "day": 13 },
+    "death": { "year": 1896, "month": 5, "day": 20 },
+    "country": [ "deu" ]
+  },
+  {
+    "id": 35,
+    "name": [
+      {
+        "lang": "fr",
+        "last": "Chopin",
+        "given": "Frédéric François"
+      }
+    ],
+    "birth": { "year": 1810, "month": 3, "day": 1 },
+    "death": { "year": 1849, "month": 10, "day": 17 },
+    "country": [ "pol", "fra" ]
+  },
+  {
+    "id": 36,
+    "name": [
+      {
+        "lang": "de",
+        "last": "Brahms",
+        "given": "Johannes"
+      },
+      {
+        "lang": "ja",
+        "last": "ブラームス",
+        "given": "ヨハネス"
+      }
+    ],
+    "birth": { "year":1833, "month": 5, "day": 7 },
+    "death": { "year":1897, "month": 4, "day": 3 },
+    "country": [ "deu", "aut" ]
+  },
+  {
+    "id": 37,
+    "name": [
+      {
+        "lang": "de",
+        "last": "Bruckner",
+        "given": "Joseph Anton"
+      },
+      {
+        "lang": "ja",
+        "last": "ブルックナー",
+        "given": "ヨーゼフ・アントン"
+      }
+    ],
+    "birth": { "year": 1824, "month": 9, "day": 24 },
+    "death": { "year": 1896, "month": 10, "day": 11 },
+    "country": [ "aut" ]
+  },
+  {
+    "id": 38,
+    "name": [
+      {
+        "lang": "en",
+        "last": "Borodin",
+        "given": "Alexander Porfiryevich"
+      },
+      {
+        "lang": "ru",
+        "last": "Бороли́н",
+        "given": "Алекса́ндр Порфи́рьевич"
+      },
+      {
+        "lang": "ja",
+        "last": "ボロディン",
+        "given": "アレクサンドル・ポルフィーリエヴィチ"
+      }
+    ],
+    "birth": { "year": 1833, "month": 11, "day": 12 },
+    "death": { "year": 1887, "month": 2, "day": 27 },
+    "country": [ "rus" ]
+  },
+  {
+    "id": 39,
+    "name": [
+      {
+        "lang": "cz",
+        "last": "Smetana",
+        "given": "Bedřich"
+      },
+      {
+        "lang": "ja",
+        "last": "スメタナ",
+        "given": "ベドルジハ"
+      }
+    ],
+    "birth": { "year": 1824, "month": 3, "day": 2 },
+    "death": { "year": 1884, "month": 5, "day": 12 },
+    "country": [ "cze" ]
+  },
+  {
+    "id": 40,
+    "name": [
+      {
+        "lang": "fr",
+        "last": "Saint-Saëns",
+        "given": "Charles Camille"
+      },
+      {
+        "lang": "ja",
+        "last": "サン=サーンス",
+        "given": "シャルル・カミーユ"
+      }
+    ],
+    "birth": { "year": 1835, "month": 10, "day": 9 },
+    "death": { "year": 1921, "month": 12, "day": 16 },
+    "country": [ "fra" ]
   }
 ]

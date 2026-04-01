@@ -16,6 +16,7 @@ export type Country
   | "gbr" // イギリス
   | "hun" // ハンガリー
   | "ita" // イタリア
+  | "pol" // ポーランド
   | "nld" // オランダ
   | "rus" // ロシア
   | "usa" // アメリカ
