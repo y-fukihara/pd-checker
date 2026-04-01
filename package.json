@@ -1,7 +1,7 @@
 {
   "name": "pd-checker",
   "private": true,
-  "version": "0.8.0",
+  "version": "0.8.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -32,8 +32,8 @@
     "eslint-plugin-react-hooks": "^7.1.0-canary-3cb2c420-20260324",
     "eslint-plugin-react-refresh": "^0.5.2",
     "globals": "^17.4.0",
-    "typescript": "^5.9.3",
-    "typescript-eslint": "^8.56.1",
+    "typescript": "^6.0.2",
+    "typescript-eslint": "^8.58.0",
     "vite": "^8.0.3"
   }
 }
