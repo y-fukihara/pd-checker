@@ -1,7 +1,7 @@
 {
   "name": "pd-checker",
   "private": true,
-  "version": "0.8.6",
+  "version": "0.9.0",
   "type": "module",
 
   "homepage": "https://github.com/y-fukihara/pd-checker",

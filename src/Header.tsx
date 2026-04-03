@@ -6,8 +6,8 @@ function Header() {
     <div id="wrapper">
       <header id="top-bar">
         <ul>
-          <li><a href="./">作曲家PDチェッカー (トップ)</a></li>
-          <li><a href="./about">このツールについて (About)</a></li>
+          <li><a href="./#/">作曲家PDチェッカー (トップ)</a></li>
+          <li><a href="./#/about">このツールについて (About)</a></li>
         </ul>
       </header>
       <main>

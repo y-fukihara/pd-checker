@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { createBrowserRouter, RouterProvider } from 'react-router'
+import { createHashRouter, RouterProvider } from 'react-router'
 /* Sanitization CSS */
 import 'sanitize.css'
 import 'sanitize.css/forms.css'
@@ -15,7 +15,7 @@ import Header from './Header.tsx'
 import App from './App.tsx'
 import AboutProduct from './AboutProduct.tsx'
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   { 
     path: '/',
     Component: Header,
@@ -24,9 +24,7 @@ const router = createBrowserRouter([
       { path: "about", Component: AboutProduct },
     ]
   },
-], {
-  basename: '/pd-checker'
-})
+])
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
