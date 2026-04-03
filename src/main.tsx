@@ -24,7 +24,9 @@ const router = createBrowserRouter([
       { path: "/about", Component: AboutProduct },
     ]
   },
-])
+], {
+  basename: '/pd-checker'
+})
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
