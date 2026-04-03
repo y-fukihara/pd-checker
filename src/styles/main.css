@@ -8,13 +8,14 @@ body, #wrapper {
   overflow-y: hidden;
 }
 #root {
-  container-type: inline-size;
+  width: 100vw;
   height: 100vh;
   overflow-y: hidden;
+
+  border-inline: none;
 }
 @media (max-width: 1126px) {
   #root {
-    width: 100vw;
     margin: 0 0;
     box-sizing: border-box;
   }

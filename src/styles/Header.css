@@ -8,7 +8,7 @@ header#top-bar {
   position: sticky;
   top: 0;
   left: 0;
-  width: 100cqi;
+  width: 100%;
   height: calc(1lh + 1em);
   margin: 0 0 0;
 
@@ -18,7 +18,7 @@ header#top-bar {
     position: absolute;
     width: 100vw;
     top: 0;
-    left: calc((100cqi - 100vw) / 2);
+    left: calc((100% - 100vw) / 2);
 
     display: flex;
     flex-flow: row wrap;
@@ -47,5 +47,10 @@ header#top-bar {
   }
 }
 main {
+  container-type: inline-size;
+  width: min(100%, 1126px);
+  margin: 0 auto;
+  border-inline: 1px solid var(--border);
+
   padding-top: 2em;
 }
