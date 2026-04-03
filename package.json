@@ -1,8 +1,10 @@
 {
   "name": "pd-checker",
   "private": true,
-  "version": "0.8.4",
+  "version": "0.8.5",
   "type": "module",
+
+  "homepage": "https://github.com/y-fukihara/pd-checker",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
