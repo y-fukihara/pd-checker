@@ -638,6 +638,16 @@
         "lang": "fr",
         "last": "Chopin",
         "given": "Frédéric François"
+      },
+      {
+        "lang": "pl",
+        "last": "Chopin",
+        "given": "Fryderyk Franciszek"
+      },
+      {
+        "lang": "ja",
+        "last": "ショパン",
+        "given": "フレデリック・フランソワ"
       }
     ],
     "birth": { "year": 1810, "month": 3, "day": 1 },

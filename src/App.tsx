@@ -100,6 +100,9 @@ function App() {
           switch(config_result_lang) {
             case "jpn":
               p_name = person.name.find((name) => name.lang === "ja")
+              if(p_name === undefined){
+                p_name = person.name[0]
+              }
               break
             case "eng":
               p_name = person.name[0]
@@ -109,7 +112,7 @@ function App() {
               break
           }
           if (p_name === undefined) {
-            throw "Invalid argument (in constructing composerResultList): config_result_lang = "+config_result_lang
+            throw "Invalid argument (in constructing composerResultList): config_result_lang = "+config_result_lang+", p_name = "+p_name
           }
           const ret: ComposerResult = {
             id: person.id,
