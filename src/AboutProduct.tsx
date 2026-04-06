@@ -1,4 +1,4 @@
-import { AT, CH, DE, ES, FR, GB, HU, IT, JP, NL, PL, RU, US } from 'country-flag-icons/react/3x2';
+import { AT, CH, CZ, DE, DK, ES, FR, GB, HU, IT, JP, NL, NO, PL, RU, US } from 'country-flag-icons/react/3x2';
 import './styles/App.css'
 
 function AboutProduct() {
@@ -104,11 +104,13 @@ function AboutProduct() {
           <dd>3794日（およそ10年5か月）</dd>
           <dt>オランダ<NL className="flag" /></dt>
           <dd>3844日（およそ10年6か月）</dd>
+          <dt>ノルウェー<NO className="flag" /></dt>
+          <dd>3846日（およそ10年6か月）</dd>
           <dt>フランス<FR className="flag" /></dt>
           <dd>8年120日もしくは14年272日（後述）</dd>
           <dt>イタリア<IT className="flag" /></dt>
           <dd>6年（後述）</dd>
-          <dt>オーストリア<AT className="flag" />・スイス<CH className="flag" />・スペイン<ES className="flag" />・ドイツ<DE className="flag" />・ハンガリー<HU className="flag" />・ポーランド<PL className="flag" />・ロシア<RU className="flag" /></dt>
+          <dt>オーストリア<AT className="flag" />・スイス<CH className="flag" />・チェコ<CZ className="flag" />・デンマーク<DK className="flag" />・スペイン<ES className="flag" />・ドイツ<DE className="flag" />・ハンガリー<HU className="flag" />・ポーランド<PL className="flag" />・ロシア<RU className="flag" /></dt>
           <dd>なし</dd>
         </dl>
         <h3>著作された本国における著作権のルールの影響</h3>

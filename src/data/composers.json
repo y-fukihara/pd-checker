@@ -701,7 +701,7 @@
       {
         "lang": "ru",
         "last": "Бороли́н",
-        "given": "Алекса́ндр Порфи́рьевич"
+        "given": "Александр Порфирьевич"
       },
       {
         "lang": "ja",
@@ -747,6 +747,216 @@
     ],
     "birth": { "year": 1835, "month": 10, "day": 9 },
     "death": { "year": 1921, "month": 12, "day": 16 },
+    "country": [ "fra" ]
+  },
+  {
+    "id": 41,
+    "name": [
+      {
+        "lang": "en",
+        "last": "Balakirev",
+        "given": "Miliy Alekseyevich"
+      },
+      {
+        "lang": "ru",
+        "last": "Балакирев",
+        "given": "Милий Алексеевич"
+      },
+      {
+        "lang": "ja",
+        "last": "バラキレフ",
+        "given": "ミリイ・アレクセーエヴィチ"
+      }
+    ],
+    "birth": { "year": 1837, "month": 1, "day": 2 },
+    "death": { "year": 1910, "month": 5, "day": 29 },
+    "country": [ "rus" ]
+  },
+  {
+    "id": 42,
+    "name": [
+      {
+        "lang": "en",
+        "last": "Mussorgsky",
+        "given": "Modest Petrovich"
+      },
+      {
+        "lang": "ru",
+        "last": "Мусоргский",
+        "given": "Модест Петрович"
+      },
+      {
+        "lang": "ja",
+        "last": "ムソルグスキー",
+        "given": "モデスト・ペトローヴィチ"
+      }
+    ],
+    "birth": { "year": 1839, "month": 3, "day": 21 },
+    "death": { "year": 1881, "month": 3, "day": 28 },
+    "country": [ "rus" ]
+  },
+  {
+    "id": 43,
+    "name": [
+      {
+        "lang": "en",
+        "last": "Rimsky-Korsakov",
+        "given": "Nikolai Andreyevich"
+      },
+      {
+        "lang": "ru",
+        "last": "Римский-Корсаков",
+        "given": "Николай Анлреевич"
+      },
+      {
+        "lang": "ja",
+        "last": "リムスキー=コルサコフ",
+        "given": "ニコライ・アンドレイェヴィチ"
+      }
+    ],
+    "birth": { "year": 1844, "month": 3, "day": 18 },
+    "death": { "year": 1908, "month": 6, "day": 21 },
+    "country": [ "rus" ]
+  },
+  {
+    "id": 44,
+    "name": [
+      {
+        "lang": "en",
+        "last": "Glazunov",
+        "given": "Aleksandr Konstantinovich"
+      },
+      {
+        "lang": "ru",
+        "last": "Гразунов",
+        "given": "Александр Константинович"
+      },
+      {
+        "lang": "ja",
+        "last": "グラズノフ",
+        "given": "アレクサンドル・コンスタンティノヴィチ"
+      }
+    ],
+    "birth": { "year": 1865, "month": 8, "day": 10 },
+    "death": { "year": 1936, "month": 3, "day": 21 },
+    "country": [ "rus", "fra" ]
+  },
+  {
+    "id": 45,
+    "name": [
+      {
+        "lang": "fr",
+        "last": "Scriabine",
+        "given": "Alexandre Nikolaïevitch"
+      },
+      {
+        "lang": "ru",
+        "last": "Скрябин",
+        "given": "Александр Николаевич"
+      },
+      {
+        "lang": "ja",
+        "last": "スクリャービン",
+        "given": "アレクサンドル・ニコラエヴィチ"
+      }
+    ],
+    "birth": { "year": 1872, "month": 1, "day": 6 },
+    "death": { "year": 1915, "month": 4, "day": 27 },
+    "country": [ "rus" ]
+  },
+  {
+    "id": 46,
+    "name": [
+      {
+        "lang": "en",
+        "last": "Rachmaninov",
+        "given": "Sergei Vasilyevich"
+      },
+      {
+        "lang": "ru",
+        "last": "Рахманинов",
+        "given": "Сергеи Васильевич"
+      },
+      {
+        "lang": "ja",
+        "last": "ラフマニノフ",
+        "given": "セルゲイ・ヴァシリエヴィチ"
+      }
+    ],
+    "birth": { "year": 1873, "month": 4, "day": 1 },
+    "death": { "year": 1943, "month": 3, "day": 28 },
+    "country": [ "rus", "deu", "usa" ]
+  },
+  {
+    "id": 47,
+    "name": [
+      {
+        "lang": "de",
+        "last": "Bruch",
+        "given": "Max Christian Friedrich"
+      },
+      {
+        "lang": "ja",
+        "last": "ブルッフ",
+        "given": "マックス・クリスティアン・フリードリヒ"
+      }
+    ],
+    "birth": { "year": 1838, "month": 1, "day": 6 },
+    "death": { "year": 1920, "month": 10, "day": 2 },
+    "country": [ "deu" ]
+  },
+  {
+    "id": 48,
+    "name": [
+      {
+        "lang": "cz",
+        "last": "Dvořak",
+        "given": "Antonin Leopold"
+      },
+      {
+        "lang": "ja",
+        "last": "ドヴォルザーク",
+        "given": "アントニン・レオポルト"
+      }
+    ],
+    "birth": { "year": 1841, "month": 9, "day": 8 },
+    "death": { "year": 1904, "month": 5, "day": 1 },
+    "country": [ "cze", "usa" ]
+  },
+  {
+    "id": 49,
+    "name": [
+      {
+        "lang": "no",
+        "last": "Grieg",
+        "given": "Edvard Hagerup"
+      },
+      {
+        "lang": "ja",
+        "last": "グリーグ",
+        "given": "エドヴァルド・ハーゲルップ"
+      }
+    ],
+    "birth": { "year": 1843, "month": 6, "day": 15 },
+    "death": { "year": 1907, "month": 9, "day": 4 },
+    "country": [ "nor", "dnk" ]
+  },
+  {
+    "id": 50,
+    "name": [
+      {
+        "lang": "fr",
+        "last": "Fauré",
+        "given": "Gabriel Urbain"
+      },
+      {
+        "lang": "ja",
+        "last": "フォーレ",
+        "given": "ガブリエル・ユルバン"
+      }
+    ],
+    "birth": { "year": 1845, "month": 5, "day": 12 },
+    "death": { "year": 1924, "month": 11, "day": 4 },
     "country": [ "fra" ]
   }
 ]
