@@ -264,12 +264,15 @@ const calcMostExpandedWartime_jpn = (ctr: Country, birth: PDate, death: PDate) =
     イギリス: 3794日
     イタリア: 6年（イタリア平和条約第15条付属書に基づく）
     オランダ: 3844日
+    ノルウェー: 3846日
     ロシア: なし（サンフランシスコ平和条約非署名）
     アメリカ: 3794日
    */
   if (dd.plus({ years: 50 }).year >= 1941) {
     if (ctr === "fra" && bd < DateTime.fromObject({ year: 1914, month: 8, day: 2 })) {
       ds = Duration.fromObject({ year: 14, day: 272 })
+    } else if (ctr === "nor") {
+      ds = Duration.fromObject({ day: 3846 })
     } else if (ctr === "nld") {
       ds = Duration.fromObject({ day: 3844 })
     } else if (ctr === "gbr" || ctr === "usa") {

@@ -10,7 +10,9 @@ export type Region = "50yrs" | "75yrs" | "jpn"
 export type Country
   = "aut" // オーストリア
   | "che" // スイス
+  | "cze" // チェコ
   | "deu" // ドイツ
+  | "dnk" // デンマーク
   | "esp" // スペイン
   | "fra" // フランス
   | "gbr" // イギリス
@@ -18,6 +20,7 @@ export type Country
   | "ita" // イタリア
   | "pol" // ポーランド
   | "nld" // オランダ
+  | "nor" // ノルウェー
   | "rus" // ロシア
   | "usa" // アメリカ
 
