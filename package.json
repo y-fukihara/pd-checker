@@ -3,7 +3,6 @@
   "private": true,
   "version": "0.9.0",
   "type": "module",
-
   "homepage": "https://github.com/y-fukihara/pd-checker",
   "scripts": {
     "dev": "vite",
@@ -26,7 +25,7 @@
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.0",
-    "eslint": "^10.1.0",
+    "eslint": "^10.2.0",
     "eslint-plugin-react-hooks": "^7.1.0-canary-80b1cab3-20260331",
     "eslint-plugin-react-refresh": "^0.5.2",
     "globals": "^17.4.0",
