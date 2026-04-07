@@ -8,17 +8,21 @@ export type Region = "50yrs" | "75yrs" | "jpn"
 /* Country Data Types:
     Implemented only places where some registered was there */
 export type Country
-  = "aut" // オーストリア
+  = "arg" // アルゼンチン
+  | "aut" // オーストリア
+  | "bra" // ブラジル
   | "che" // スイス
   | "cze" // チェコ
   | "deu" // ドイツ
   | "dnk" // デンマーク
   | "esp" // スペイン
+  | "fin" // フィンランド
   | "fra" // フランス
   | "gbr" // イギリス
   | "hun" // ハンガリー
   | "ita" // イタリア
   | "pol" // ポーランド
+  | "pry" // パラグアイ
   | "nld" // オランダ
   | "nor" // ノルウェー
   | "rus" // ロシア

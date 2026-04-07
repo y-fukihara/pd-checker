@@ -958,5 +958,380 @@
     "birth": { "year": 1845, "month": 5, "day": 12 },
     "death": { "year": 1924, "month": 11, "day": 4 },
     "country": [ "fra" ]
+  },
+  {
+    "id": 51,
+    "name": [
+      {
+        "lang": "cz",
+        "last": "Janáček",
+        "given": "Leoš"
+      },
+      {
+        "lang": "ja",
+        "last": "ヤナーチェク",
+        "given": "レオシュ"
+      }
+    ],
+    "birth": { "year": 1854, "month": 7, "day": 3 },
+    "death": { "year": 1928, "month": 8, "day": 12 },
+    "country": [ "cze", "deu", "aut" ]
+  },
+  {
+    "id": 52,
+    "name": [
+      {
+        "lang": "en",
+        "last": "Sousa",
+        "given": "John Philip"
+      },
+      {
+        "lang": "ja",
+        "last": "スーザ",
+        "given": "ジョン・フィリップ"
+      }
+    ],
+    "birth": { "year": 1854, "month": 11, "day": 6 },
+    "death": { "year": 1932, "month": 3, "day": 6 },
+    "country": [ "usa" ]
+  },
+  {
+    "id": 53,
+    "name": [
+      {
+        "lang": "en",
+        "last": "Elgar",
+        "given": "Edward William"
+      },
+      {
+        "lang": "ja",
+        "last": "エルガー",
+        "given": "エドワード・ウィリアム"
+      }
+    ],
+    "birth": { "year": 1857, "month": 6, "day": 2 },
+    "death": { "year": 1934, "month": 2, "day": 23 },
+    "country": [ "gbr" ]
+  },
+  {
+    "id": 54,
+    "name": [
+      {
+        "lang": "it",
+        "last": "Puccini",
+        "given": "Giacomo Antonio Domenico Michele Secondo Maria"
+      },
+      {
+        "lang": "ja",
+        "last": "プッチーニ",
+        "given": "ジャコモ・アントニオ・ドメニコ・ミケーレ・セコンド・マリア"
+      }
+    ],
+    "birth": { "year": 1858, "month": 12, "day": 22 },
+    "death": { "year": 1924, "month": 11, "day": 29 },
+    "country": [ "ita" ]
+  },
+  {
+    "id": 55,
+    "name": [
+      {
+        "lang": "fr",
+        "last": "Debussy",
+        "given": "Claude Achille"
+      },
+      {
+        "lang": "ja",
+        "last": "ドビュッシー",
+        "given": "クロード・アシル"
+      }
+    ],
+    "birth": { "year": 1862, "month": 8, "day": 22 },
+    "death": { "year": 1918, "month": 3, "day": 25 },
+    "country": [ "fra" ]
+  },
+  {
+    "id": 56,
+    "name": [
+      {
+        "lang": "dk",
+        "last": "Nielsen",
+        "given": "Carl August"
+      },
+      {
+        "lang": "ja",
+        "last": "ニールセン",
+        "given": "カール・アウグスト"
+      }
+    ],
+    "birth": { "year": 1865, "month": 6, "day": 9 },
+    "death": { "year": 1931, "month": 10, "day": 3 },
+    "country": [ "dnk" ]
+  },
+  {
+    "id": 57,
+    "name": [
+      {
+        "lang": "fi",
+        "last": "Sibelius",
+        "given": "Jean"
+      },
+      {
+        "lang": "ja",
+        "last": "シベリウス",
+        "given": "ジャン"
+      }
+    ],
+    "birth": { "year": 1865, "month": 12, "day": 8 },
+    "death": { "year": 1957, "month": 9, "day": 20 },
+    "country": [ "fin" ]
+  },
+  {
+    "id": 58,
+    "name": [
+      {
+        "lang": "fr",
+        "last": "Satie",
+        "given": "Érik Alfred Leslie"
+      },
+      {
+        "lang": "ja",
+        "last": "サティ",
+        "given": "エリック・アルフレッド・レスリ"
+      }
+    ],
+    "birth": { "year": 1866, "month": 3, "day": 17 },
+    "death": { "year": 1925, "month": 7, "day": 1 },
+    "country": [ "fra" ]
+  },
+  {
+    "id": 59,
+    "name": [
+      {
+        "lang": "en",
+        "last": "Holst",
+        "given": "Gustav Theodore"
+      },
+      {
+        "lang": "ja",
+        "last": "ホルスト",
+        "given": "グスターヴ・セオドア"
+      }
+    ],
+    "birth": { "year": 1874, "month": 9, "day": 21 },
+    "death": { "year": 1934, "month": 5, "day": 25 },
+    "country": [ "gbr" ]
+  },
+  {
+    "id": 60,
+    "name": [
+      {
+        "lang": "de",
+        "last": "Schönberg",
+        "given": "Arnold Franz Walter"
+      },
+      {
+        "lang": "en",
+        "last": "Schoenberg",
+        "given": "Arnold Franz Walter"
+      },
+      {
+        "lang": "ja",
+        "last": "シェーンベルク",
+        "given": "アルノルト・フランツ・ヴァルター"
+      }
+    ],
+    "birth": { "year": 1874, "month": 9, "day": 13 },
+    "death": { "year": 1951, "month": 7, "day": 13 },
+    "country": [ "aut", "usa" ]
+  },
+  {
+    "id": 61,
+    "name": [
+      {
+        "lang": "en",
+        "last": "Ives",
+        "given": "Charles Edward"
+      },
+      {
+        "lang": "ja",
+        "last": "アイヴズ",
+        "given": "チャールズ・エドワード"
+      }
+    ],
+    "birth": { "year": 1874, "month": 10, "day": 20 },
+    "death": { "year": 1954, "month": 5, "day": 19 },
+    "country": [ "usa" ]
+  },
+  {
+    "id": 62,
+    "name": [
+      {
+        "lang": "es",
+        "last": "De Falla y Matheu",
+        "given": "Manuel"
+      },
+      {
+        "lang": "ja",
+        "last": "デ・ファリャ・イ・マテウ",
+        "given": "マヌエル"
+      }
+    ],
+    "birth": { "year": 1876, "month": 11, "day": 23 },
+    "death": { "year": 1946, "month": 11, "day": 14 },
+    "country": [ "esp", "fra", "arg" ]
+  },
+  {
+    "id": 63,
+    "name": [
+      {
+        "lang": "br",
+        "last": "Villa-Lobos",
+        "given": "Heitor"
+      },
+      {
+        "lang": "ja",
+        "last": "ヴィラ=ロボス",
+        "given": "エイトル"
+      }
+    ],
+    "birth": { "year": 1887, "month": 3, "day": 5 },
+    "death": { "year": 1959, "month": 11, "day": 17 },
+    "country": [ "bra", "pry" ]
+  },
+  {
+    "id": 64,
+    "name": [
+      {
+        "lang": "hu",
+        "last": "Kodály",
+        "given": "Zoltán"
+      },
+      {
+        "lang": "ja",
+        "last": "コダーイ",
+        "given": "ゾルターン"
+      }
+    ],
+    "birth": { "year": 1882, "month": 12, "day": 16 },
+    "death": { "year": 1967, "month": 3, "day": 6 },
+    "country": [ "hun", "fra" ]
+  },
+  {
+    "id": 65,
+    "name": [
+      {
+        "lang": "hu",
+        "last": "Bartók",
+        "given": "Béla Viktor János"
+      },
+      {
+        "lang": "ja",
+        "last": "バルトーク",
+        "given": "ベーラ・ヴィクトル・ヤーノシュ"
+      }
+    ],
+    "birth": { "year": 1881, "month": 3, "day": 25 },
+    "death": { "year": 1945, "month": 9, "day": 26 },
+    "country": [ "hun" ]
+  },
+  {
+    "id": 66,
+    "name": [
+      {
+        "lang": "en",
+        "last": "Gershwin",
+        "given": "George"
+      },
+      {
+        "lang": "ja",
+        "last": "ガーシュウィン",
+        "given": "ジョージ"
+      }
+    ],
+    "birth": { "year": 1898, "month": 9, "day": 26 },
+    "death": { "year": 1937, "month": 7, "day": 11 },
+    "country": [ "usa" ]
+  },
+  {
+    "id": 67,
+    "name": [
+      {
+        "lang": "en",
+        "last": "Copland",
+        "given": "Aaron"
+      },
+      {
+        "lang": "ja",
+        "last": "コープランド",
+        "given": "アーロン"
+      }
+    ],
+    "birth": { "year": 1900, "month": 11, "day": 14 },
+    "death": { "year": 1990, "month": 12, "day": 2 },
+    "country": [ "usa" ]
+  },
+  {
+    "id": 68,
+    "name": [
+      {
+        "lang": "en",
+        "last": "Khachaturian",
+        "given": "Aram Ilyich"
+      },
+      {
+        "lang": "ru",
+        "last": "Хачатурян",
+        "given": "Арам Ильич"
+      },
+      {
+        "lang": "hy",
+        "last": "Խաչատրյան",
+        "given": "Արամ"
+      },
+      {
+        "lang": "ja",
+        "last": "ハチャトゥリアン",
+        "given": "アラム・イリイチ"
+      }
+    ],
+    "birth": { "year": 1903, "month": 5, "day": 24 },
+    "death": { "year": 1978, "month": 5, "day": 1 },
+    "country": [ "rus" ]
+  },
+  {
+    "id": 69,
+    "name": [
+      {
+        "lang": "ar",
+        "last": "Piazzolla",
+        "given": "Ástor Pantaleón"
+      },
+      {
+        "lang": "ja",
+        "last": "ピアソラ",
+        "given": "アストル・パンタレオン"
+      }
+    ],
+    "birth": { "year": 1921, "month": 3, "day": 11 },
+    "death": { "year": 1992, "month": 7, "day": 4 },
+    "country": [ "arg" ]
+  },
+  {
+    "id": 70,
+    "name": [
+      {
+        "lang": "ar",
+        "last": "Ginastera",
+        "given": "Alberto Evaristo"
+      },
+      {
+        "lang": "ja",
+        "last": "ヒナステラ",
+        "given": "アルベルト・エバリスト"
+      }
+    ],
+    "birth": { "year": 1916, "month": 4, "day": 11 },
+    "death": { "year": 1983, "month": 6, "day": 25 },
+    "country": [ "arg", "che" ]
   }
 ]

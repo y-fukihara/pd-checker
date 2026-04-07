@@ -1,4 +1,4 @@
-import { AT, CH, CZ, DE, DK, ES, FR, GB, HU, IT, JP, NL, NO, PL, RU, US } from 'country-flag-icons/react/3x2';
+import { AR, AT, BR, CH, CZ, DE, DK, ES, FI, FR, GB, HU, IT, JP, NL, NO, PL, RU, US } from 'country-flag-icons/react/3x2';
 import './styles/App.css'
 
 function AboutProduct() {
@@ -100,8 +100,10 @@ function AboutProduct() {
           枢軸国・中立国その他の理由でこの条約を批准していない国に対して戦時加算は発生しません。
         </p>
         <dl>
-          <dt>アメリカ<US className="flag" />・イギリス<GB className="flag" /></dt>
+          <dt>アメリカ<US className="flag" />・イギリス<GB className="flag" />・アルゼンチン<AR className="flag" /></dt>
           <dd>3794日（およそ10年5か月）</dd>
+          <dt>ブラジル<BR className="flag" /></dt>
+          <dd>3816日（およそ10年5か月）</dd>
           <dt>オランダ<NL className="flag" /></dt>
           <dd>3844日（およそ10年6か月）</dd>
           <dt>ノルウェー<NO className="flag" /></dt>
@@ -110,7 +112,18 @@ function AboutProduct() {
           <dd>8年120日もしくは14年272日（後述）</dd>
           <dt>イタリア<IT className="flag" /></dt>
           <dd>6年（後述）</dd>
-          <dt>オーストリア<AT className="flag" />・スイス<CH className="flag" />・チェコ<CZ className="flag" />・デンマーク<DK className="flag" />・スペイン<ES className="flag" />・ドイツ<DE className="flag" />・ハンガリー<HU className="flag" />・ポーランド<PL className="flag" />・ロシア<RU className="flag" /></dt>
+          <dt>
+            オーストリア<AT className="flag" />・
+            スイス<CH className="flag" />・
+            チェコ<CZ className="flag" />・
+            デンマーク<DK className="flag" />・
+            スペイン<ES className="flag" />・
+            ドイツ<DE className="flag" />・
+            フィンランド<FI className="flag" />・
+            ハンガリー<HU className="flag" />・
+            ポーランド<PL className="flag" />・
+            ロシア<RU className="flag" />
+          </dt>
           <dd>なし</dd>
         </dl>
         <h3>著作された本国における著作権のルールの影響</h3>
@@ -151,6 +164,7 @@ function AboutProduct() {
         <ul>
           <li><a href="https://laws.e-gov.go.jp/law/345AC0000000048/20260401_505AC0000000033?occasion_date=20260401">著作権法 | e-Gov 法令検索</a></li>
           <li><a href="https://www.bunka.go.jp/seisaku/chosakuken/hokaisei/kantaiheiyo_chosakuken/1411890.html">著作物等の保護期間の延長に関するQ&A</a>（文化庁）</li>
+          <li><a href="https://www.jasrac.or.jp/aboutus/wartime/">戦時加算義務の解消に関する取り組み</a>（一般社団法人日本音楽著作権協会）</li>
           <li><a href="https://www.cric.or.jp/db/world/index.html">外国著作権法一覧</a>（公益社団法人著作権情報センター）</li>
           <li>一九四八年にブラッセルで改正された著作権に関するベルヌ条約（外務省、日本語、pdf）</li>
           <ul>

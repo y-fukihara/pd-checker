@@ -257,7 +257,9 @@ const calcMostExpandedWartime_jpn = (ctr: Country, birth: PDate, death: PDate) =
   const dd: DateTime = DateTime.fromObject(death)
   let ds: Maybe<Duration> = null
   /* 戦時加算日数
+    アルゼンチン: 3794日
     オーストリア: なし (当時ドイツに併合されていたため)
+    ブラジル: 3816日
     スイス: なし（中立国）
     ドイツ: なし（制度はあったが、著作権延長の申出がなかったため）
     フランス: 8年120日もしくは14年272日（フランス知的所有権法典第123の8条・9条に基づく）
@@ -265,17 +267,22 @@ const calcMostExpandedWartime_jpn = (ctr: Country, birth: PDate, death: PDate) =
     イタリア: 6年（イタリア平和条約第15条付属書に基づく）
     オランダ: 3844日
     ノルウェー: 3846日
+    パラグアイ: 4107日
     ロシア: なし（サンフランシスコ平和条約非署名）
     アメリカ: 3794日
    */
   if (dd.plus({ years: 50 }).year >= 1941) {
     if (ctr === "fra" && bd < DateTime.fromObject({ year: 1914, month: 8, day: 2 })) {
       ds = Duration.fromObject({ year: 14, day: 272 })
+    } else if (ctr === "pry") {
+      ds = Duration.fromObject({ day: 4107 })
     } else if (ctr === "nor") {
       ds = Duration.fromObject({ day: 3846 })
     } else if (ctr === "nld") {
       ds = Duration.fromObject({ day: 3844 })
-    } else if (ctr === "gbr" || ctr === "usa") {
+    } else if (ctr === "bra") {
+      ds = Duration.fromObject({ day: 3816 })
+    } else if (ctr === "gbr" || ctr === "usa" || ctr === "arg") {
       ds = Duration.fromObject({ day: 3794 })
     } else if (ctr === "fra" && bd < DateTime.fromObject({ year: 1939, month: 9, day: 3 })) {
       ds = Duration.fromObject({ year: 8, day: 120 })
